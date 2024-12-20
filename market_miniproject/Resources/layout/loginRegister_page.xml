@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/logoImg_login"
+        android:layout_width="140dp"
+        android:layout_height="140dp"/>
+    <TextView
+        android:id="@+id/loginTxt"
+        android:textColor="@android:color/black"
+        android:textSize="40dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="Login">
+    </TextView>
+    <LinearLayout
+        android:id="@+id/propertiesLayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="name"/>
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="username or email"/>
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="password"/>
+
+    </LinearLayout>/>
+    <Button
+        android:id="@+id/loginBtn_login"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:text="Login"/>
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:backgroundTint="@android:color/darker_gray"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:text="Cancel"/> 
+    
+</LinearLayout>
