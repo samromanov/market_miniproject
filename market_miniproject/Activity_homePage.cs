@@ -8,9 +8,12 @@ namespace market_miniproject
     [Activity(Label = "Activity_homePage")]
     public class Activity_homePage : Activity
     {
+        private TrackAdapter _adapter;
+
         private TabHost _tabHost;
 
         private ImageButton _shopping_cartBtn;
+        private ListView _products_listview;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,7 +36,7 @@ namespace market_miniproject
             homeTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.home);
             homeTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Home";
             homeTab.SetIndicator(homeTabIndicator);
-            homeTab.SetContent(Resource.Id.homeTab_content);
+            homeTab.SetContent(Resource.Id.homeTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(homeTab);
 
             // Set up Products Tab
@@ -42,7 +45,7 @@ namespace market_miniproject
             productsTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.products);
             productsTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Products";
             productsTab.SetIndicator(productsTabIndicator);
-            productsTab.SetContent(Resource.Id.productsTab_content);
+            productsTab.SetContent(Resource.Id.productsTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(productsTab);
 
             // Set up History Tab
@@ -51,7 +54,7 @@ namespace market_miniproject
             historyTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.history);
             historyTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "History";
             historyTab.SetIndicator(historyTabIndicator);
-            historyTab.SetContent(Resource.Id.historyTab_content);
+            historyTab.SetContent(Resource.Id.historyTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(historyTab);
 
             // Set up Account Tab
@@ -60,7 +63,7 @@ namespace market_miniproject
             accountTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.user);
             accountTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Account";
             accountTab.SetIndicator(accountTabIndicator);
-            accountTab.SetContent(Resource.Id.accountTab_content);
+            accountTab.SetContent(Resource.Id.accountTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(accountTab);
 
             // Set up More Tab
@@ -69,13 +72,24 @@ namespace market_miniproject
             moreTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.more);
             moreTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "More";
             moreTab.SetIndicator(moreTabIndicator);
-            moreTab.SetContent(Resource.Id.moreTab_content);
+            moreTab.SetContent(Resource.Id.moreTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(moreTab);
 
             //----------------------------------------------------------------------------------
 
             // Finding views by ID
             _shopping_cartBtn = FindViewById<ImageButton>(Resource.Id.shopping_cartBtn);
+
+            // Home Tab
+
+
+            // Products tab
+            _products_listview = FindViewById<ListView>(Resource.Id.products_listView);
+            _adapter = new TrackAdapter(this, ProductsList.productsList);
+            _products_listview.Adapter = _adapter;
+            
+
+            // History tab
 
             //----------------------------------------------------------------------------------
 

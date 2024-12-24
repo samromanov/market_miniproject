@@ -6,7 +6,7 @@
     android:gravity="center">
     <LinearLayout
         android:layout_width="340dp"
-        android:layout_height="450dp"
+        android:layout_height="250dp"
         android:orientation="vertical"
         android:gravity="center">
         <TextView
@@ -64,11 +64,11 @@
             android:id="@+id/sendSMS"
             android:layout_marginLeft="30dp"
             android:textSize="20dp"
+            android:textColor="@android:color/holo_blue_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+972506962007"
-            android:autoLink="phone"
-            android:textColor="@android:color/holo_blue_light"/>
+            android:autoLink="phone"/>
     </LinearLayout>/>
     </LinearLayout>/>
     

@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Net;
 using Android.OS;
 using Android.Runtime;
 using Android.Text;
@@ -40,9 +41,15 @@ namespace market_miniproject
             registerBtx.Click += RegisterBtx_Click;
             contactUsBtx.Click += ContactUsBtx_Click;
 
+            //-------------------------------------------------------------------------------
+
+
+
 
         }
 
+
+        // Contact us button (dialog)
         private void ContactUsBtx_Click(object sender, System.EventArgs e)
         {
             var contactUs_dialog = new Dialog(this);
@@ -53,6 +60,8 @@ namespace market_miniproject
 
             contactUs_dialog.Show();
         }
+
+        
 
         private void RegisterBtx_Click(object sender, System.EventArgs e)
         {

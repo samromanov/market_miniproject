@@ -4,28 +4,29 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using market_miniproject.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace market_miniproject.Internal_Lists
-{
-    internal class ProductsList
+namespace market_miniproject
+{   
+    internal static class ProductsList
     {
         // Public List Property
-        public List<string> productsLst; // { get; set; }
+        public static List<Track> productsList = new List<Track>();
 
         // Constructor to initialize the list
-        public ProductsList()
-        {
-            productsLst = new List<string>();
-        }
+        //public ProductsList()
+        //{
+        //    productsLst = new List<string>();
+        //}
 
         // Method to manipulate the list
-        public void AddItem(string item)
+        public static void AddItem(Track item)
         {
-            productsLst.Add(item);
+            productsList.Add(item);
         }
 
     }

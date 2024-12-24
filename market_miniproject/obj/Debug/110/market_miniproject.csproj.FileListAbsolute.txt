@@ -304,7 +304,6 @@ C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\layout\loginregister_page.xml
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\LoginRegister.java
-C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\market_miniproject.csproj.AssemblyReference.cache
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\shopping_cart.png
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\layout\home_page.xml
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\Activity_homePage.java
@@ -320,3 +319,15 @@ C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\history.png
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\layout\shoppingcart.xml
 C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\layout\tab_indicator.xml
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc64515a9eb9e3682c11\ClassicalTrack.java
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc64515a9eb9e3682c11\JazzTrack.java
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc64515a9eb9e3682c11\RockTrack.java
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc64515a9eb9e3682c11\Track.java
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\market_miniproject.csproj.AssemblyReference.cache
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\layout\individualitem.xml
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\classics.jpg
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\jazz.jpg
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\rock.png
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\info.png
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\res\layout\individualinfo.xml
+C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\TrackAdapter.java
