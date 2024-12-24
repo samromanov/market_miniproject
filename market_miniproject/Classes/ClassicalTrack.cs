@@ -15,7 +15,7 @@ namespace market_miniproject.Classes
     {
         private string era; // "Baroque", "Romantic", "Modern", etc.
         private string type; // "Waltz", "Minuet", "Tango", "March", "Ballade", etc.
-        public ClassicalTrack(string pieceTitle, string composer, int duration, string era, string type) : base(pieceTitle, composer, duration)
+        public ClassicalTrack(string pieceTitle, string composer, int duration,double price, string era, string type) : base(pieceTitle, composer, duration, price)
         {
             this.era = era;
             this.type = type;

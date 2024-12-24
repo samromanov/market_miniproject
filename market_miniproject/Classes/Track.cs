@@ -16,11 +16,13 @@ namespace market_miniproject.Classes
         private string trackTitle;
         private string author;
         private int duration_s;
-        public Track(string trackTitle,string author,int duration_s)
+        private double price;
+        public Track(string trackTitle, string author, int duration_s, double price)
         {
             this.trackTitle = trackTitle;
             this.author = author;
             this.duration_s = duration_s;
+            this.price = price;
         }
         public string TrackTitle
         {
@@ -37,6 +39,11 @@ namespace market_miniproject.Classes
             get { return this.duration_s; }
             set { this.duration_s = value; }
         }
+        public double Price
+        {
+            get { return this.price; }
+            set { this.price = value; }
+        }
         public override string ToString() // virtual(?)
         {
             int totalSeconds = this.duration_s; // Total duration in seconds
@@ -47,7 +54,7 @@ namespace market_miniproject.Classes
             {
                 return $"Title: {this.trackTitle}\nAuthor: {this.author}\nDuration: {seconds}s";
             }
-            return $"Title: {this.trackTitle}\nAuthor: {this.author}\nDuration: {minutes}:{seconds}s";
+            return $"Title: {this.trackTitle}\nAuthor: {this.author}\nDuration: {minutes}:{seconds}s\nPrice: {this.price}$";
         }
     }
 }

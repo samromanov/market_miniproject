@@ -15,7 +15,7 @@ namespace market_miniproject.Classes
     {
         private string subGenre; // "Punk", "Metal", etc.
         private string lyricsTheme; // "Love", "Rebellion", etc.
-        public RockTrack(string songName, string bandName, int duration, string subGenre, string lyricsTheme) : base(songName, bandName, duration)
+        public RockTrack(string songName, string bandName, int duration, double price, string subGenre, string lyricsTheme) : base(songName, bandName, duration, price)
         {
             this.subGenre = subGenre;
             this.lyricsTheme = lyricsTheme;

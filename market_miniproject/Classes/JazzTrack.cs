@@ -15,7 +15,7 @@ namespace market_miniproject.Classes
     {
         private string leadInstrument; // "Piano", "Guitar", "Saxophone", etc.
         private int soloDuration; // Duration of solos in seconds
-        public JazzTrack(string pieceTitle,string author,int duration,string leadInstrument, int soloDuration) :base(pieceTitle, author, duration)
+        public JazzTrack(string pieceTitle,string author,int duration, double price, string leadInstrument, int soloDuration) :base(pieceTitle, author, duration, price)
         {
             this.leadInstrument = leadInstrument;
             this.soloDuration = soloDuration;

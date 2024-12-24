@@ -100,7 +100,18 @@ namespace market_miniproject
 
         private void _shopping_cartBtn_Click(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
+            
+            var cart_dialog = new Dialog(this);
+            cart_dialog.SetContentView(Resource.Layout.shoppingCart);
+            var _back_fromCart = FindViewById<ImageButton>(Resource.Id.back_fromCart);
+            var _cart_listView = FindViewById<ListView>(Resource.Id.cart_listView);
+
+            // Set an event listener to close the dialog
+            _back_fromCart.Click += (s, args) => cart_dialog.Dismiss();
+            // Make the dialog background transparent
+            cart_dialog.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
+
+            cart_dialog.Show();
         }
     }
 }

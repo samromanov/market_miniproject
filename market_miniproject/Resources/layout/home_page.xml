@@ -19,7 +19,7 @@
             android:text="SAM SANG"/>
         
         <ImageButton
-            android:id="@id/shopping_cartBtn"
+            android:id="@+id/shopping_cartBtn"
             android:layout_marginLeft="100dp"
             android:layout_width="35dp"
             android:layout_height="35dp"
