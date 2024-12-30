@@ -23,11 +23,11 @@ public class RockTrack
 			mono.android.TypeManager.Activate ("market_miniproject.Classes.RockTrack, market_miniproject", "", this, new java.lang.Object[] {  });
 	}
 
-	public RockTrack (java.lang.String p0, java.lang.String p1, int p2)
+	public RockTrack (java.lang.String p0, java.lang.String p1, int p2, double p3)
 	{
 		super ();
 		if (getClass () == RockTrack.class)
-			mono.android.TypeManager.Activate ("market_miniproject.Classes.RockTrack, market_miniproject", "System.String, mscorlib:System.String, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+			mono.android.TypeManager.Activate ("market_miniproject.Classes.RockTrack, market_miniproject", "System.String, mscorlib:System.String, mscorlib:System.Int32, mscorlib:System.Double, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
 	}
 
 
