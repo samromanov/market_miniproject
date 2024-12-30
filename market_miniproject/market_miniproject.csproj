@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity_homePage.cs" />
+    <Compile Include="AddNewTrack_Activity.cs" />
     <Compile Include="Classes\ClassicalTrack.cs" />
     <Compile Include="Classes\JazzTrack.cs" />
     <Compile Include="Classes\RockTrack.cs" />
@@ -212,6 +213,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\removeFromCart.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\addNewTrack.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\aboutUs_individual.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

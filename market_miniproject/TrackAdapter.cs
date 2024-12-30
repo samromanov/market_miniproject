@@ -58,44 +58,44 @@ namespace market_miniproject
             _addToCartBtn.Click += AddToCartBtn_Click;
             _trackTypeImg_products.Click += TrackTypeImg_products_Click;
 
-            //// change the icon of the track
-            //positionTrack = item; 
-            //if (positionTrack is ClassicalTrack)
-            //{
-            //    _trackTypeImg_products.SetImageResource(Resource.Drawable.classics);
-
-            //}
-            //else if (positionTrack is JazzTrack)
-            //{
-            //    _trackTypeImg_products.SetImageResource(Resource.Drawable.jazz);
-            //}
-            //else // if (tempTrack is RockTrack)
-            //{
-            //    _trackTypeImg_products.SetImageResource(Resource.Drawable.rock);
-            //}
-            for (int i = 0; i < ProductsList.productsList.Count; i++) // change the icon of the track
+            // change the icon of the track
+            positionTrack = item;
+            if (positionTrack is ClassicalTrack)
             {
-                positionTrack = ProductsList.productsList[i];
-                if (positionTrack.Title == _trackTitle_products.Text && positionTrack.Author == _trackAuthor_products.Text) // found the track from the list in the position
-                {
-                    if (positionTrack is ClassicalTrack)
-                    {
-                        _trackTypeImg_products.SetImageResource(Resource.Drawable.classics);
-                        break;
+                _trackTypeImg_products.SetImageResource(Resource.Drawable.classics);
 
-                    }
-                    else if (positionTrack is JazzTrack)
-                    {
-                        _trackTypeImg_products.SetImageResource(Resource.Drawable.jazz);
-                        break;
-                    }
-                    else // if (tempTrack is RockTrack)
-                    {
-                        _trackTypeImg_products.SetImageResource(Resource.Drawable.rock);
-                        break;
-                    }
-                }
             }
+            else if (positionTrack is JazzTrack)
+            {
+                _trackTypeImg_products.SetImageResource(Resource.Drawable.jazz);
+            }
+            else // if (tempTrack is RockTrack)
+            {
+                _trackTypeImg_products.SetImageResource(Resource.Drawable.rock);
+            }
+            //for (int i = 0; i < ProductsList.productsList.Count; i++) // change the icon of the track
+            //{
+            //    positionTrack = ProductsList.productsList[i];
+            //    if (positionTrack.Title == _trackTitle_products.Text && positionTrack.Author == _trackAuthor_products.Text) // found the track from the list in the position
+            //    {
+            //        if (positionTrack is ClassicalTrack)
+            //        {
+            //            _trackTypeImg_products.SetImageResource(Resource.Drawable.classics);
+            //            break;
+
+            //        }
+            //        else if (positionTrack is JazzTrack)
+            //        {
+            //            _trackTypeImg_products.SetImageResource(Resource.Drawable.jazz);
+            //            break;
+            //        }
+            //        else // if (tempTrack is RockTrack)
+            //        {
+            //            _trackTypeImg_products.SetImageResource(Resource.Drawable.rock);
+            //            break;
+            //        }
+            //    }
+            //}
             _trackTitle_products.Text = item.TrackTitle;
             _trackAuthor_products.Text = item.Author;
             _itemPrice_products.Text = item.Price.ToString();
