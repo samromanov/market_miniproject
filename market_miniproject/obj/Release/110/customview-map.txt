@@ -3,6 +3,7 @@ adaptive-icon;obj\Release\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 background;obj\Release\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Release\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Release\110\res\layout\activity_main.xml
+Button;obj\Release\110\res\layout\addnewtrack.xml
 Button;obj\Release\110\res\layout\cart_individualitem.xml
 Button;obj\Release\110\res\layout\home_page.xml
 Button;obj\Release\110\res\layout\individualitem.xml
@@ -13,17 +14,22 @@ cache-path;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_minipr
 color;obj\Release\110\res\values\colors.xml
 color;obj\Release\110\res\values\ic_launcher_background.xml
 corners;obj\Release\110\res\drawable\rounded_dialog_background.xml
+EditText;obj\Release\110\res\layout\addnewtrack.xml
 EditText;obj\Release\110\res\layout\loginregister_page.xml
 external-cache-path;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Release\110\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Release\110\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Release\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Release\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
+FrameLayout;obj\Release\110\res\layout\addnewtrack.xml
 FrameLayout;obj\Release\110\res\layout\home_page.xml
+ImageButton;obj\Release\110\res\layout\addnewtrack.xml
 ImageButton;obj\Release\110\res\layout\cart_individualitem.xml
+ImageButton;obj\Release\110\res\layout\editicon_sample.xml
 ImageButton;obj\Release\110\res\layout\home_page.xml
 ImageButton;obj\Release\110\res\layout\individualitem.xml
 ImageButton;obj\Release\110\res\layout\shoppingcart.xml
 ImageView;obj\Release\110\res\layout\activity_main.xml
+ImageView;obj\Release\110\res\layout\addnewtrack.xml
 ImageView;obj\Release\110\res\layout\cart_individualitem.xml
 ImageView;obj\Release\110\res\layout\contactus.xml
 ImageView;obj\Release\110\res\layout\individualitem.xml
@@ -35,6 +41,7 @@ LinearLayout;obj\Release\110\res\layout\activity_main.xml
 LinearLayout;obj\Release\110\res\layout\addnewtrack.xml
 LinearLayout;obj\Release\110\res\layout\cart_individualitem.xml
 LinearLayout;obj\Release\110\res\layout\contactus.xml
+LinearLayout;obj\Release\110\res\layout\editicon_sample.xml
 LinearLayout;obj\Release\110\res\layout\home_page.xml
 LinearLayout;obj\Release\110\res\layout\individualinfo.xml
 LinearLayout;obj\Release\110\res\layout\individualitem.xml
@@ -46,6 +53,7 @@ ListView;obj\Release\110\res\layout\home_page.xml
 ListView;obj\Release\110\res\layout\shoppingcart.xml
 padding;obj\Release\110\res\drawable\rounded_dialog_background.xml
 paths;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Release\110\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+RadioButton;obj\Release\110\res\layout\addnewtrack.xml
 RadioGroup;obj\Release\110\res\layout\addnewtrack.xml
 resources;obj\Release\110\res\values\colors.xml
 resources;obj\Release\110\res\values\ic_launcher_background.xml

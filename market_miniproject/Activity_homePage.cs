@@ -134,7 +134,7 @@ namespace market_miniproject
 
         private void _addNewTrackBtn_Click(object sender, System.EventArgs e)
         {
-            Intent addTrackIntent = new Intent(this, typeof());
+            Intent addTrackIntent = new Intent(this, typeof(AddNewTrack_Activity));
             StartActivity(addTrackIntent);
 
         }
@@ -144,13 +144,17 @@ namespace market_miniproject
             
             var cart_dialog = new Dialog(this);
             cart_dialog.SetContentView(Resource.Layout.shoppingCart);
-            var _back_fromCart = FindViewById<ImageButton>(Resource.Id.back_fromCart);
-            var _cart_listView = FindViewById<ListView>(Resource.Id.cart_listView);
+            var _back_fromCart = cart_dialog.FindViewById<ImageButton>(Resource.Id.back_fromCart);
+            var _cart_listView = cart_dialog.FindViewById<ListView>(Resource.Id.cart_listView);
 
             // Set an event listener to close the dialog
             _back_fromCart.Click += (s, args) => cart_dialog.Dismiss();
             // Make the dialog background transparent
             cart_dialog.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
+
+            _cart_listView = cart_dialog.FindViewById<ListView>(Resource.Id.cart_listView);
+            _cartAdapter = new ShoppingCartAdapter_Track(this, ShoppingCartList.shoppingCartList);
+            _cart_listView.Adapter = _cartAdapter;
 
             cart_dialog.Show();
         }

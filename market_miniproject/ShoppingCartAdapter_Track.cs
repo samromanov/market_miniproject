@@ -39,6 +39,7 @@ namespace market_miniproject
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = _items[position]; // item from the original list in the position
+            positionTrack = item;
 
             var view = convertView;
             if (view == null)
@@ -58,43 +59,10 @@ namespace market_miniproject
             _minus.Click += Minus_Click;
             _plus.Click += Plus_Click;
 
-            // change the icon of the track
-            positionTrack = item;
-            if (positionTrack is ClassicalTrack)
-            {
-                _trackTypeImg_cart.SetImageResource(Resource.Drawable.classics);
-            }
-            else if (positionTrack is JazzTrack)
-            {
-                _trackTypeImg_cart.SetImageResource(Resource.Drawable.jazz);
-            }
-            else // if (tempTrack is RockTrack)
-            {
-                _trackTypeImg_cart.SetImageResource(Resource.Drawable.rock);
-            }
-            //for (int i = 0; i < ProductsList.productsList.Count; i++) // change the icon of the track
-            //{
-            //    positionTrack = ProductsList.productsList[i];
-            //    if (positionTrack.Title == _trackTitle_cart.Text && positionTrack.Author == _trackAuthor_cart.Text) // found the track from the list in the position
-            //    {
-            //        if (positionTrack is ClassicalTrack)
-            //        {
-            //            _trackTypeImg_cart.SetImageResource(Resource.Drawable.classics);
-            //            break;
+            
+            
 
-            //        }
-            //        else if (positionTrack is JazzTrack)
-            //        {
-            //            _trackTypeImg_cart.SetImageResource(Resource.Drawable.jazz);
-            //            break;
-            //        }
-            //        else // if (tempTrack is RockTrack)
-            //        {
-            //            _trackTypeImg_cart.SetImageResource(Resource.Drawable.rock);
-            //            break;
-            //        }
-            //    }
-            //}
+            _trackTypeImg_cart.SetImageResource(item.ImageId);           
             _trackTitle_cart.Text = item.TrackTitle;
             _trackAuthor_cart.Text = item.Author;
             _itemPrice_cart.Text = (item.Price * int.Parse(_itemsAmount.Text)).ToString() + "$"; // total price = price * amount
@@ -115,7 +83,7 @@ namespace market_miniproject
             int currentAmount = int.Parse(_itemsAmount.Text); // for example 1
             int added = currentAmount++; // now it will be 2
 
-            _itemPrice_cart.Text = added.ToString();
+            _itemsAmount.Text = added.ToString();
 
             //Toast.MakeText(_context, $"Successfully added!", ToastLength.Short).Show();
         }

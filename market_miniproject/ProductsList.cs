@@ -28,6 +28,10 @@ namespace market_miniproject
         {
             productsList.Add(item);
         }
+        public static void RemoveItem(Track item)
+        {
+            productsList.Remove(item);
+        }
 
     }
 }

@@ -1,12 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height=""/>
+    android:layout_height="match_parent"
+    android:background="@drawable/samsang_logo">
     <RadioGroup
+        android:id="@+id/addTrack_rdg"
+        android:background="#D3DDE6"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="60dp"/>
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/classical_rdb"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classical"/>
+        <RadioButton
+            android:id="@+id/jazz_rdb"
+            android:layout_marginLeft="30dp"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jazz"/>
+        <RadioButton
+            android:id="@+id/rock_rdb"
+            android:layout_marginLeft="30dp"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rock"/>
+        <RadioButton
+            android:id="@+id/other_rdb"
+            android:layout_marginLeft="30dp"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"/>
+    </RadioGroup>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp">
+
+            <!-- The ImageView -->
+            <ImageView
+                android:id="@+id/trackIcon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@drawable/classics_icon"/>
+
+            <!-- The clickable pencil icon -->
+            <ImageView
+                android:id="@+id/editTrackIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="8dp"
+                android:src="@drawable/pen"
+                android:clickable="true"
+                android:focusable="true" />
+        </FrameLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_width="170dp"
+            android:layout_height="120dp">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:background="@drawable/attach"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <Button
+                    android:layout_marginLeft="10dp"
+                    android:textAllCaps="false"
+                    android:textSize="10dp"
+                    android:id="@+id/btnAttach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attach Audio"
+                    android:padding="0dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/title_input"
+                android:singleLine="true"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
+                android:hint="Title"/>
+            <EditText
+                android:id="@+id/author_input"
+                android:singleLine="true"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
+                android:hint="Author"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:inputType="number"
+                android:id="@+id/duration_input"
+                android:singleLine="true"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
+                android:hint="Duration (s)"/>
+            <EditText
+                android:inputType="numberDecimal"
+                android:id="@+id/price_input"
+                android:singleLine="true"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
+                android:hint="Price ($)"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/variable1_input"
+                android:singleLine="true"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
+                android:hint="Variable 1"/>
+            <EditText
+                android:id="@+id/variable2_input"
+                android:singleLine="true"
+                android:layout_width="170dp"
+                android:layout_height="45dp"
+                android:hint="Variable 2"/>
+        </LinearLayout>
+        <Button
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textSize="15dp"
+            android:id="@+id/btnAddTrack"
+            android:layout_marginTop="40dp"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="+ Add Track"
+            android:textAllCaps="false"/>
+        <Button
+            android:backgroundTint="#FF0000"
+            android:textSize="15dp"
+            android:id="@+id/btnCancelAdding"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
 </LinearLayout>
