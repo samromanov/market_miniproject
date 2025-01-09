@@ -17,7 +17,6 @@ namespace market_miniproject
 
         private Context _context;
         private List<Track> _items;
-        private Track positionTrack;
 
         public TrackAdapter(Context context, List<Track> items)
         {
@@ -55,50 +54,16 @@ namespace market_miniproject
             var _addToCartBtn = view.FindViewById<Button>(Resource.Id.addToCartBtn); // set up the button which shows adds the item to the shopping cart
             _addToCartBtn.Tag = position;
             _trackTypeImg_products.Tag = position;
+            _addToCartBtn.Click -= AddToCartBtn_Click;
             _addToCartBtn.Click += AddToCartBtn_Click;
+            _trackTypeImg_products.Click -= TrackTypeImg_products_Click;
             _trackTypeImg_products.Click += TrackTypeImg_products_Click;
 
-            // change the icon of the track
-            positionTrack = item;
-            if (positionTrack is ClassicalTrack)
-            {
-                _trackTypeImg_products.SetImageResource(Resource.Drawable.classics);
-
-            }
-            else if (positionTrack is JazzTrack)
-            {
-                _trackTypeImg_products.SetImageResource(Resource.Drawable.jazz);
-            }
-            else // if (tempTrack is RockTrack)
-            {
-                _trackTypeImg_products.SetImageResource(Resource.Drawable.rock);
-            }
-            //for (int i = 0; i < ProductsList.productsList.Count; i++) // change the icon of the track
-            //{
-            //    positionTrack = ProductsList.productsList[i];
-            //    if (positionTrack.Title == _trackTitle_products.Text && positionTrack.Author == _trackAuthor_products.Text) // found the track from the list in the position
-            //    {
-            //        if (positionTrack is ClassicalTrack)
-            //        {
-            //            _trackTypeImg_products.SetImageResource(Resource.Drawable.classics);
-            //            break;
-
-            //        }
-            //        else if (positionTrack is JazzTrack)
-            //        {
-            //            _trackTypeImg_products.SetImageResource(Resource.Drawable.jazz);
-            //            break;
-            //        }
-            //        else // if (tempTrack is RockTrack)
-            //        {
-            //            _trackTypeImg_products.SetImageResource(Resource.Drawable.rock);
-            //            break;
-            //        }
-            //    }
-            //}
+                    
+            _trackTypeImg_products.SetImageResource(item.ImageId); // change the icon of the track             
             _trackTitle_products.Text = item.TrackTitle;
             _trackAuthor_products.Text = item.Author;
-            _itemPrice_products.Text = item.Price.ToString();
+            _itemPrice_products.Text = item.Price.ToString() + "$";
 
             return view;
         }
@@ -107,10 +72,11 @@ namespace market_miniproject
         {
             ImageView clickedImg = (ImageView)sender;
             int position = (int)clickedImg.Tag;
+            var item = _items[position]; // item in the original list in the position
             Dialog infoDialog = new Dialog(_context);
             infoDialog.SetContentView(Resource.Layout.individualInfo);
             var _moreInfoTxt = infoDialog.FindViewById<TextView>(Resource.Id.moreInfoTxt);
-            _moreInfoTxt.Text = positionTrack.ToString();
+            _moreInfoTxt.Text = item.ToString();
 
             infoDialog.Show();
         }
@@ -119,10 +85,11 @@ namespace market_miniproject
         {
             Button clickedBtn = (Button)sender;
             int position = (int)clickedBtn.Tag;
+            var item = _items[position].ShallowCopy(); // item in the original list in the position
             bool alreadyAdded = false; // if the item (track) I want to add is already added
-            for (int i = 0; i < ShoppingCartList.shoppingCartList.Count; i++)
+            foreach (var product in ShoppingCartList.shoppingCartList)
             {
-                if (positionTrack == ShoppingCartList.shoppingCartList[i])
+                if (product.TrackTitle == item.TrackTitle && product.Author == item.Author) // found the item in the cart list
                 {
                     alreadyAdded = true;
                     break;
@@ -130,12 +97,12 @@ namespace market_miniproject
             }
             if (alreadyAdded == false)
             {
-                ShoppingCartList.shoppingCartList.Add(positionTrack);
-                Toast.MakeText(_context, $"Successfully added {positionTrack.TrackTitle}!", ToastLength.Short).Show();
+                ShoppingCartList.shoppingCartList.Add(item);
+                Toast.MakeText(_context, $"Successfully added {item.TrackTitle}!", ToastLength.Short).Show();
             }
             else // if (alreadyAdded == true)
             {
-                Toast.MakeText(_context, $"{positionTrack.TrackTitle} is already in the cart!", ToastLength.Short).Show();
+                Toast.MakeText(_context, $"{item.TrackTitle} is already in the cart!", ToastLength.Short).Show();
             }
         }
     }

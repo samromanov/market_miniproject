@@ -13,16 +13,23 @@ namespace market_miniproject.Classes
 {
     class Track : Activity
     {
+        private int imageId;
         private string trackTitle;
         private string author;
         private int duration_s;
         private double price;
-        public Track(string trackTitle, string author, int duration_s, double price)
+        public Track(int imageId, string trackTitle, string author, int duration_s, double price)
         {
+            this.imageId = imageId;
             this.trackTitle = trackTitle;
             this.author = author;
             this.duration_s = duration_s;
             this.price = price;
+        }
+        public int ImageId
+        {
+            get { return this.imageId; }
+            set { this.imageId = value; }
         }
         public string TrackTitle
         {
@@ -43,6 +50,11 @@ namespace market_miniproject.Classes
         {
             get { return this.price; }
             set { this.price = value; }
+        }
+
+        public Track ShallowCopy()
+        {
+            return (Track)this.MemberwiseClone();
         }
         public override string ToString() // virtual(?)
         {

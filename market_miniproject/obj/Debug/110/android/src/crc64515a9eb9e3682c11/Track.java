@@ -23,11 +23,11 @@ public class Track
 			mono.android.TypeManager.Activate ("market_miniproject.Classes.Track, market_miniproject", "", this, new java.lang.Object[] {  });
 	}
 
-	public Track (java.lang.String p0, java.lang.String p1, int p2, double p3)
+	public Track (int p0, java.lang.String p1, java.lang.String p2, int p3, double p4)
 	{
 		super ();
 		if (getClass () == Track.class)
-			mono.android.TypeManager.Activate ("market_miniproject.Classes.Track, market_miniproject", "System.String, mscorlib:System.String, mscorlib:System.Int32, mscorlib:System.Double, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
+			mono.android.TypeManager.Activate ("market_miniproject.Classes.Track, market_miniproject", "System.Int32, mscorlib:System.String, mscorlib:System.String, mscorlib:System.Int32, mscorlib:System.Double, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3, p4 });
 	}
 
 

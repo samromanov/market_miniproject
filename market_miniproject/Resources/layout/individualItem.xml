@@ -7,13 +7,12 @@
         android:padding="5dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_height="wrap_content">
         <ImageView
             android:clickable="true"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@drawable/classics"
+            android:background="@drawable/classics_icon"
             android:id="@+id/trackTypeImg_products"/>
         <LinearLayout
             android:layout_marginLeft="10dp"
@@ -38,7 +37,7 @@
         <LinearLayout       
             android:orientation="vertical"
             android:background="#D3DDE6"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView

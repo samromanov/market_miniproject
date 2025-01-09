@@ -3,27 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#D3DDE6"
-    android:padding="15dp">
-    <TextView
-        android:textColor="@android:color/black"
-        android:textSize="40dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About Us"
-        android:layout_marginBottom="20dp"/>
-    <ScrollView
-        android:id="@+id/scrollView_aboutUs"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="330dp"
+        android:layout_height="400dp"
+        android:gravity="center"
+        android:background="#D3DDE6"
+        android:padding="15dp">
         <TextView
-            android:id="@+id/aboutUsTxt"
             android:textColor="@android:color/black"
-            android:textSize="20dp"
-            android:text="This will be an about us paragraph and information"
+            android:textSize="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:layout_marginBottom="20dp"/>
+        <ScrollView
+            android:id="@+id/scrollView_aboutUs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </ScrollView>
+            android:layout_height="match_parent">
+            <TextView
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsTxt"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:text="Welcome to Sam Sang, the ultimate destination for music lovers who cherish the timeless charm of cassette tapes. Our application brings the rich sounds of classical, jazz, rock, and more right to your fingertips. Browse through an extensive collection of tracks and albums, thoughtfully curated to satisfy every musical taste. Whether you're seeking a nostalgic favorite or exploring something new, Sam Sang makes it easy to discover and purchase your next cassette treasure online. Let us bring the melodies you love into your hands and your life."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </LinearLayout>
+
 </LinearLayout>
