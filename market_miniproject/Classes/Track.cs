@@ -51,6 +51,11 @@ namespace market_miniproject.Classes
             get { return this.price; }
             set { this.price = value; }
         }
+
+        public Track ShallowCopy()
+        {
+            return (Track)this.MemberwiseClone();
+        }
         public override string ToString() // virtual(?)
         {
             int totalSeconds = this.duration_s; // Total duration in seconds

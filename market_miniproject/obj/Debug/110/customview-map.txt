@@ -9,14 +9,13 @@ Button;obj\Debug\110\res\layout\individualitem.xml
 Button;obj\Debug\110\res\layout\loginregister_page.xml
 Button;obj\Debug\110\res\layout\removefromcart.xml
 Button;obj\Debug\110\res\layout\shoppingcart.xml
-cache-path;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
-corners;obj\Debug\110\res\drawable\rounded_dialog_background.xml
 EditText;obj\Debug\110\res\layout\addnewtrack.xml
 EditText;obj\Debug\110\res\layout\loginregister_page.xml
-external-cache-path;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 FrameLayout;obj\Debug\110\res\layout\addnewtrack.xml
@@ -48,8 +47,7 @@ LinearLayout;obj\Debug\110\res\layout\shoppingcart.xml
 LinearLayout;obj\Debug\110\res\layout\tab_indicator.xml
 ListView;obj\Debug\110\res\layout\home_page.xml
 ListView;obj\Debug\110\res\layout\shoppingcart.xml
-padding;obj\Debug\110\res\drawable\rounded_dialog_background.xml
-paths;C:\Users\Sam\Source\Repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;C:\Users\timov\source\repos\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RadioButton;obj\Debug\110\res\layout\addnewtrack.xml
 RadioGroup;obj\Debug\110\res\layout\addnewtrack.xml
 resources;obj\Debug\110\res\values\colors.xml
@@ -57,8 +55,6 @@ resources;obj\Debug\110\res\values\ic_launcher_background.xml
 resources;obj\Debug\110\res\values\strings.xml
 resources;obj\Debug\110\res\values\styles.xml
 ScrollView;obj\Debug\110\res\layout\aboutus_individual.xml
-shape;obj\Debug\110\res\drawable\rounded_dialog_background.xml
-solid;obj\Debug\110\res\drawable\rounded_dialog_background.xml
 string;obj\Debug\110\res\values\strings.xml
 style;obj\Debug\110\res\values\styles.xml
 TabHost;obj\Debug\110\res\layout\home_page.xml

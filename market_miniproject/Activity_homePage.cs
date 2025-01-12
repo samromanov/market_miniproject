@@ -3,6 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using market_miniproject.Classes;
 
 namespace market_miniproject
 {
@@ -10,7 +11,6 @@ namespace market_miniproject
     public class Activity_homePage : Activity
     {
         private TrackAdapter _adapter;
-        private ShoppingCartAdapter_Track _cartAdapter;
 
         private TabHost _tabHost;
 
@@ -41,46 +41,46 @@ namespace market_miniproject
 
             // Set up Home Tab 
             var homeTab = _tabHost.NewTabSpec("HomeTab");
-            var homeTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
-            homeTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.home);
-            homeTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Home";
-            homeTab.SetIndicator(homeTabIndicator);
+            //var homeTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
+            //homeTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.home);
+            //homeTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Home";
+            homeTab.SetIndicator("Home");
             homeTab.SetContent(Resource.Id.homeTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(homeTab);
 
             // Set up Products Tab
             var productsTab = _tabHost.NewTabSpec("productsTab");
-            var productsTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
-            productsTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.products);
-            productsTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Products";
-            productsTab.SetIndicator(productsTabIndicator);
+            //var productsTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
+            //productsTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.products);
+            //productsTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Products";
+            productsTab.SetIndicator("Products");
             productsTab.SetContent(Resource.Id.productsTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(productsTab);
 
-            // Set up History Tab
-            var historyTab = _tabHost.NewTabSpec("historyTab");
-            var historyTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
-            historyTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.history);
-            historyTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "History";
-            historyTab.SetIndicator(historyTabIndicator);
-            historyTab.SetContent(Resource.Id.historyTab_content); // if it's error, check the home_page.xml
-            _tabHost.AddTab(historyTab);
+            //// Set up History Tab
+            //var historyTab = _tabHost.NewTabSpec("historyTab");
+            ////var historyTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
+            ////historyTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.history);
+            ////historyTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "History";
+            //historyTab.SetIndicator("History");
+            //historyTab.SetContent(Resource.Id.historyTab_content); // if it's error, check the home_page.xml
+            //_tabHost.AddTab(historyTab);
 
-            // Set up Account Tab
-            var accountTab = _tabHost.NewTabSpec("accountTab");
-            var accountTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
-            accountTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.user);
-            accountTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Account";
-            accountTab.SetIndicator(accountTabIndicator);
-            accountTab.SetContent(Resource.Id.accountTab_content); // if it's error, check the home_page.xml
-            _tabHost.AddTab(accountTab);
+            //// Set up Account Tab
+            //var accountTab = _tabHost.NewTabSpec("accountTab");
+            ////var accountTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
+            ////accountTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.user);
+            ////accountTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "Account";
+            //accountTab.SetIndicator("Account");
+            //accountTab.SetContent(Resource.Id.accountTab_content); // if it's error, check the home_page.xml
+            //_tabHost.AddTab(accountTab);
 
             // Set up More Tab
             var moreTab = _tabHost.NewTabSpec("moreTab");
-            var moreTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
-            moreTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.more);
-            moreTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "More";
-            moreTab.SetIndicator(moreTabIndicator);
+            //var moreTabIndicator = LayoutInflater.From(this).Inflate(Resource.Layout.tab_indicator, null);
+            //moreTabIndicator.FindViewById<ImageView>(Resource.Id.tabIcon).SetImageResource(Resource.Drawable.more);
+            //moreTabIndicator.FindViewById<TextView>(Resource.Id.tabLabel).Text = "More";
+            moreTab.SetIndicator("More");
             moreTab.SetContent(Resource.Id.moreTab_content); // if it's error, check the home_page.xml
             _tabHost.AddTab(moreTab);
 
@@ -93,6 +93,21 @@ namespace market_miniproject
 
 
             // Products tab
+            ClassicalTrack track1 = new ClassicalTrack(Resource.Drawable.classics_icon,"Nocturne 1","Chopin",300,9.99,"Modern Era","Nocturne");
+            JazzTrack track2 = new JazzTrack(Resource.Drawable.jazz_icon, "What a Wonderful World", "Louis Armstrong", 180, 18.67, "Trumpet", 15);
+            RockTrack track3 = new RockTrack(Resource.Drawable.rock_icon, "Bohemian Rhapsody", "Queen", 355, 30.99, "Progressive Rock", "Guilt and Redemption");
+            OtherTrack track4 = new OtherTrack(Resource.Drawable.other1_icon, "My Life", "Avraham Avinu", 180, 8.50, "Metal");
+            ClassicalTrack track5 = new ClassicalTrack(Resource.Drawable.classics_icon, "Nocturne 1", "Chopin", 300, 9.99, "Modern Era", "Nocturne");
+            JazzTrack track6 = new JazzTrack(Resource.Drawable.jazz_icon, "What a Wonderful World", "Louis Armstrong", 180, 18.67, "Trumpet", 15);
+            RockTrack track7 = new RockTrack(Resource.Drawable.rock_icon, "Bohemian Rhapsody", "Queen", 355, 30.99, "Progressive Rock", "Guilt and Redemption");
+            OtherTrack track8 = new OtherTrack(Resource.Drawable.other1_icon, "My Life", "Avraham Avinu", 180, 8.50, "Metal");
+            ClassicalTrack track9 = new ClassicalTrack(Resource.Drawable.classics_icon, "Nocturne 1", "Chopin", 300, 9.99, "Modern Era", "Nocturne");
+            JazzTrack track10 = new JazzTrack(Resource.Drawable.jazz_icon, "What a Wonderful World", "Louis Armstrong", 180, 18.67, "Trumpet", 15);
+            RockTrack track11 = new RockTrack(Resource.Drawable.rock_icon, "Bohemian Rhapsody", "Queen", 355, 30.99, "Progressive Rock", "Guilt and Redemption");
+            OtherTrack track12 = new OtherTrack(Resource.Drawable.other1_icon, "My Life", "Avraham Avinu", 180, 8.50, "Metal");
+
+
+
             _products_listview = FindViewById<ListView>(Resource.Id.products_listView);
             _adapter = new TrackAdapter(this, ProductsList.productsList);
             _products_listview.Adapter = _adapter;
@@ -142,21 +157,8 @@ namespace market_miniproject
         private void _shopping_cartBtn_Click(object sender, System.EventArgs e)
         {
             
-            var cart_dialog = new Dialog(this);
-            cart_dialog.SetContentView(Resource.Layout.shoppingCart);
-            var _back_fromCart = cart_dialog.FindViewById<ImageButton>(Resource.Id.back_fromCart);
-            var _cart_listView = cart_dialog.FindViewById<ListView>(Resource.Id.cart_listView);
-
-            // Set an event listener to close the dialog
-            _back_fromCart.Click += (s, args) => cart_dialog.Dismiss();
-            // Make the dialog background transparent
-            cart_dialog.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
-
-            _cart_listView = cart_dialog.FindViewById<ListView>(Resource.Id.cart_listView);
-            _cartAdapter = new ShoppingCartAdapter_Track(this, ShoppingCartList.shoppingCartList);
-            _cart_listView.Adapter = _cartAdapter;
-
-            cart_dialog.Show();
+            Intent cartIntent = new Intent(this, typeof(ShoppingCartActivity));
+            StartActivity(cartIntent);
         }
     }
 }

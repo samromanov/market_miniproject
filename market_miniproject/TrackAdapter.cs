@@ -54,14 +54,16 @@ namespace market_miniproject
             var _addToCartBtn = view.FindViewById<Button>(Resource.Id.addToCartBtn); // set up the button which shows adds the item to the shopping cart
             _addToCartBtn.Tag = position;
             _trackTypeImg_products.Tag = position;
+            _addToCartBtn.Click -= AddToCartBtn_Click;
             _addToCartBtn.Click += AddToCartBtn_Click;
+            _trackTypeImg_products.Click -= TrackTypeImg_products_Click;
             _trackTypeImg_products.Click += TrackTypeImg_products_Click;
 
                     
             _trackTypeImg_products.SetImageResource(item.ImageId); // change the icon of the track             
             _trackTitle_products.Text = item.TrackTitle;
             _trackAuthor_products.Text = item.Author;
-            _itemPrice_products.Text = item.Price.ToString();
+            _itemPrice_products.Text = item.Price.ToString() + "$";
 
             return view;
         }
@@ -83,11 +85,11 @@ namespace market_miniproject
         {
             Button clickedBtn = (Button)sender;
             int position = (int)clickedBtn.Tag;
-            var item = _items[position]; // item in the original list in the position
+            var item = _items[position].ShallowCopy(); // item in the original list in the position
             bool alreadyAdded = false; // if the item (track) I want to add is already added
-            for (int i = 0; i < ShoppingCartList.shoppingCartList.Count; i++)
+            foreach (var product in ShoppingCartList.shoppingCartList)
             {
-                if (item == ShoppingCartList.shoppingCartList[i])
+                if (product.TrackTitle == item.TrackTitle && product.Author == item.Author) // found the item in the cart list
                 {
                     alreadyAdded = true;
                     break;

@@ -55,8 +55,9 @@ namespace market_miniproject
 
             _editTrackIcon.Click += _editTrackIcon_Click;
 
-            _btnAttach.Click += _btnAttach_Click;
+            //_btnAttach.Click += _btnAttach_Click; // ***must work on it***
 
+            _btnAddTrack.Click -= _btnAddTrack_Click;
             _btnAddTrack.Click += _btnAddTrack_Click;
 
             _btnCancelAdding.Click += _btnCancelAdding_Click;
@@ -99,10 +100,25 @@ namespace market_miniproject
                     string genre = _variable1_input.Text;
 
                     OtherTrack newTrack = new OtherTrack(imageSelected_Id, title, author, duration, price, genre);
-
-                    ProductsList.productsList.Add(newTrack);
-
-                    Finish();
+                    bool exists = false;
+                    foreach (var item in ProductsList.productsList)
+                    {
+                        if (newTrack == item)
+                        {
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if (exists == true)
+                    {
+                        Toast.MakeText(this, $"{newTrack.TrackTitle} already exists!", ToastLength.Short).Show();
+                    }
+                    else // if (exists == false)
+                    {
+                        ProductsList.productsList.Add(newTrack);
+                        Toast.MakeText(this, $"{newTrack.TrackTitle} successfully added!", ToastLength.Short).Show();
+                        Finish();
+                    }
                 }
             }
             else
@@ -124,9 +140,25 @@ namespace market_miniproject
 
                         ClassicalTrack newClassicalTrack = new ClassicalTrack(imageSelected_Id, pieceTitle, composer, duration, price, era, type);
 
-                        ProductsList.productsList.Add(newClassicalTrack);
-
-                        Finish();
+                        bool exists = false;
+                        foreach (var item in ProductsList.productsList)
+                        {
+                            if (newClassicalTrack == item)
+                        {
+                                exists = true;
+                                break;
+                            }
+                        }
+                        if (exists == true)
+                        {
+                            Toast.MakeText(this, $"{newClassicalTrack.TrackTitle} already exists!", ToastLength.Short).Show();
+                        }
+                        else // if (exists == false)
+                        {
+                            ProductsList.productsList.Add(newClassicalTrack);
+                            Toast.MakeText(this, $"{newClassicalTrack.TrackTitle} successfully added!", ToastLength.Short).Show();
+                            Finish();
+                        }
                     }
                     else if (_jazz_rdb.Checked == true)
                     {
@@ -139,9 +171,25 @@ namespace market_miniproject
 
                         JazzTrack newJazzTrack = new JazzTrack(imageSelected_Id, pieceTitle, author, duration, price, leadInstrument, soloDuration);
 
-                        ProductsList.productsList.Add(newJazzTrack);
-
-                        Finish();
+                        bool exists = false;
+                        foreach (var item in ProductsList.productsList)
+                        {
+                            if (newJazzTrack == item)
+                        {
+                                exists = true;
+                                break;
+                            }
+                        }
+                        if (exists == true)
+                        {
+                            Toast.MakeText(this, $"{newJazzTrack.TrackTitle} already exists!", ToastLength.Short).Show();
+                        }
+                        else // if (exists == false)
+                        {
+                            ProductsList.productsList.Add(newJazzTrack);
+                            Toast.MakeText(this, $"{newJazzTrack.TrackTitle} successfully added!", ToastLength.Short).Show();
+                            Finish();
+                        }
                     }
                     else // if (_rock_rdb.Checked == true)
                     {
@@ -154,9 +202,25 @@ namespace market_miniproject
 
                         RockTrack newRockTrack = new RockTrack(imageSelected_Id, songName, bandName, duration, price, subGenre, lyricsTheme);
 
-                        ProductsList.productsList.Add(newRockTrack);
-
-                        Finish();
+                        bool exists = false;
+                        foreach (var item in ProductsList.productsList)
+                        {
+                            if (newRockTrack == item)
+                        {
+                                exists = true;
+                                break;
+                            }
+                        }
+                        if (exists == true)
+                        {
+                            Toast.MakeText(this, $"{newRockTrack.TrackTitle} already exists!", ToastLength.Short).Show();
+                        }
+                        else // if (exists == false)
+                        {
+                            ProductsList.productsList.Add(newRockTrack);
+                            Toast.MakeText(this, $"{newRockTrack.TrackTitle} successfully added!", ToastLength.Short).Show();
+                            Finish();
+                        }
                     }
                 }
             }            

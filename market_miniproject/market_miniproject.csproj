@@ -73,6 +73,7 @@
     <Compile Include="ProductsList.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartActivity.cs" />
     <Compile Include="ShoppingCartAdapter_Track.cs" />
     <Compile Include="ShoppingCartList.cs" />
     <Compile Include="TrackAdapter.cs" />
@@ -186,11 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\cart_individualItem.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\rounded_dialog_background.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

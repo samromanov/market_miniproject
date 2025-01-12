@@ -75,7 +75,7 @@
                 </LinearLayout>
 
                 <!-- Layout for Tab "history" content -->
-                <LinearLayout
+                <!--<LinearLayout
                     android:id="@+id/historyTab_content"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -86,13 +86,11 @@
                         android:id="@+id/history_listView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    </ListView>/>
-                    
-                    
-                </LinearLayout>
+                    </ListView>/>      
+                </LinearLayout>-->
 
                 <!-- Layout for Tab "account" content -->
-                <LinearLayout
+                <!--<LinearLayout
                     android:id="@+id/accountTab_content"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -104,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="account page"/>
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <!-- Layout for Tab "more" content -->
                 <LinearLayout

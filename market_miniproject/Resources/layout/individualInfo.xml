@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:text="example text"
         android:textSize="20dp"
-        android:gravity="center"
         android:id="@+id/moreInfoTxt"
         android:layout_width="300dp"
         android:layout_height="300dp"/>
