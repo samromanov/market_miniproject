@@ -68,11 +68,11 @@ namespace market_miniproject
             switch (Intent.GetStringExtra("action"))
             {
                 case "login":
-                    Intent intent = new Intent(this, typeof(Activity_homePage));
+                    Intent intent = new Intent(this, typeof(MainPageActivity));
                     StartActivity(intent);
                     break;
                 case "register":
-                    Intent intent2 = new Intent(this, typeof(Activity_homePage));
+                    Intent intent2 = new Intent(this, typeof(MainPageActivity));
                     StartActivity(intent2);
                     break;
             }

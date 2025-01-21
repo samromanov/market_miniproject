@@ -30,6 +30,18 @@ namespace market_miniproject
             get { return _items[position]; }
         }
 
+        public void Clear()
+        {
+            _items.Clear();
+            NotifyDataSetChanged();
+        }
+
+        public void AddAll(IEnumerable<Track> newItems)
+        {
+            _items.AddRange(newItems);
+            NotifyDataSetChanged();
+        }
+
         public override long GetItemId(int position)
         {
             return position;
@@ -50,7 +62,7 @@ namespace market_miniproject
             var _trackTypeImg_products = view.FindViewById<ImageView>(Resource.Id.trackTypeImg_products);
             var _trackTitle_products = view.FindViewById<TextView>(Resource.Id.trackTitle_products);
             var _trackAuthor_products = view.FindViewById<TextView>(Resource.Id.trackAuthor_products);
-            var _itemPrice_products = view.FindViewById<TextView>(Resource.Id.itemPrice_products);           
+            var _itemPrice_products = view.FindViewById<TextView>(Resource.Id.itemPrice_products);
             var _addToCartBtn = view.FindViewById<Button>(Resource.Id.addToCartBtn); // set up the button which shows adds the item to the shopping cart
             _addToCartBtn.Tag = position;
             _trackTypeImg_products.Tag = position;
@@ -59,7 +71,7 @@ namespace market_miniproject
             _trackTypeImg_products.Click -= TrackTypeImg_products_Click;
             _trackTypeImg_products.Click += TrackTypeImg_products_Click;
 
-                    
+
             _trackTypeImg_products.SetImageResource(item.ImageId); // change the icon of the track             
             _trackTitle_products.Text = item.TrackTitle;
             _trackAuthor_products.Text = item.Author;

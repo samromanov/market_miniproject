@@ -1694,24 +1694,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sam\\.nuget\\packages\\": {},
+    "C:\\Users\\timov\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sam\\Source\\Repos\\samromanov\\market_miniproject\\market_miniproject\\market_miniproject.csproj",
+      "projectUniqueName": "C:\\Users\\timov\\source\\repos\\samromanov\\market_miniproject\\market_miniproject\\market_miniproject.csproj",
       "projectName": "market_miniproject",
-      "projectPath": "C:\\Users\\Sam\\Source\\Repos\\samromanov\\market_miniproject\\market_miniproject\\market_miniproject.csproj",
-      "packagesPath": "C:\\Users\\Sam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sam\\Source\\Repos\\samromanov\\market_miniproject\\market_miniproject\\obj\\",
+      "projectPath": "C:\\Users\\timov\\source\\repos\\samromanov\\market_miniproject\\market_miniproject\\market_miniproject.csproj",
+      "packagesPath": "C:\\Users\\timov\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\timov\\source\\repos\\samromanov\\market_miniproject\\market_miniproject\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\timov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

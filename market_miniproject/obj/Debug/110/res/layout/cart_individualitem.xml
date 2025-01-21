@@ -1,2 +1,24 @@
-<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"><LinearLayout android:padding="5dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"><ImageView android:clickable="true" android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/classics_icon" android:id="@+id/trackTypeImg_cart" /><LinearLayout android:layout_marginLeft="10dp" android:layout_width="200dp" android:layout_height="70dp" android:orientation="vertical"><TextView android:id="@+id/trackTitle_cart" android:textSize="20dp" android:textColor="@android:color/black" android:gravity="center" android:text="Minuet" android:layout_width="wrap_content" android:layout_height="wrap_content" /><TextView android:id="@+id/trackAuthor_cart" android:textSize="15dp" android:text="Author" android:layout_width="wrap_content" android:layout_height="wrap_content" /></LinearLayout><LinearLayout android:orientation="vertical" android:background="#D3DDE6" android:layout_width="100dp" android:layout_height="match_parent" android:gravity="center"><TextView android:id="@+id/itemPrice_cart" android:textColor="@android:color/holo_red_dark" android:text="29.99$" android:layout_width="wrap_content" android:layout_height="wrap_content" /><LinearLayout android:gravity="center" android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="35dp" android:orientation="horizontal"><ImageButton android:id="@+id/minus_cart" android:background="@drawable/minus" android:layout_width="20dp" android:layout_height="20dp" /><TextView android:id="@+id/itemsAmount_cart" android:layout_marginLeft="7dp" android:layout_marginRight="7dp" android:text="1" android:layout_width="wrap_content" android:layout_height="wrap_content" /><ImageButton android:id="@+id/plus_cart" android:background="@drawable/plus" android:layout_width="20dp" android:layout_height="20dp" /></LinearLayout>/&gt;
-        </LinearLayout></LinearLayout></LinearLayout>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"><LinearLayout android:padding="5dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"><ImageView android:clickable="true" android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/classics_icon" android:id="@+id/trackTypeImg_cart" /><LinearLayout android:layout_marginLeft="10dp" android:layout_width="200dp" android:layout_height="70dp" android:orientation="vertical"><TextView android:id="@+id/trackTitle_cart" android:textSize="20dp" android:textColor="@android:color/black" android:gravity="center" android:text="Minuet" android:layout_width="wrap_content" android:layout_height="wrap_content" /><TextView android:id="@+id/trackAuthor_cart" android:textSize="15dp" android:text="Author" android:layout_width="wrap_content" android:layout_height="wrap_content" /></LinearLayout><LinearLayout android:orientation="vertical" android:background="#D3DDE6" android:layout_width="100dp" android:layout_height="match_parent" android:gravity="center"><TextView android:id="@+id/itemPrice_cart" android:textColor="@android:color/holo_red_dark" android:text="29.99$" android:layout_width="wrap_content" android:layout_height="wrap_content" /><!--<LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/minus_cart"
+                    android:background="@drawable/minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:id="@+id/itemsAmount_cart"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageButton
+                    android:id="@+id/plus_cart"
+                    android:background="@drawable/plus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+            </LinearLayout>/>--><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/removeFromCartBtn" android:text="Renove" /></LinearLayout></LinearLayout></LinearLayout>

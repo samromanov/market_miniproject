@@ -48,7 +48,7 @@
                 android:text="29.99$"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <LinearLayout
+            <!--<LinearLayout
                 android:gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
@@ -71,7 +71,12 @@
                     android:background="@drawable/plus"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
-            </LinearLayout>/>
+            </LinearLayout>/>-->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/removeFromCartBtn"
+            android:text="Renove"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
