@@ -5,18 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/samsang_logo">
-    <LinearLayout
-        android:background="#7393B3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center">
-        <SearchView
-            android:id="@+id/searchProducts"
-            android:background="@android:color/white"
-            android:layout_width="370dp"
-            android:layout_height="40dp">
-        </SearchView>
-    </LinearLayout>
+
     <ListView
         android:id="@+id/products_listView"
         android:layout_width="match_parent"

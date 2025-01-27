@@ -28,7 +28,9 @@ namespace market_miniproject
             new ClassicalTrack(Resource.Drawable.classics_icon, "Ballade No.1", "Sam Romanov", 300, 39.99, "2023", "Ballade"),
             new JazzTrack(Resource.Drawable.jazz_icon, "Giant Steps", "John Coltrane", 283, 12.87, "Saxophone", 150),
             new RockTrack(Resource.Drawable.rock_icon, "Johnny B. Goode", "Chuck Berry", 355, 30.99, "Rock and Roll", "Guilt and Redemption"),
-            new OtherTrack(Resource.Drawable.other5_icon, "The First Rain", "Sam Romanov", 180, 8.50, "Classical")
+            new OtherTrack(Resource.Drawable.other5_icon, "The First Rain", "Sam Romanov", 180, 8.50, "Classical"),
+            new OtherTrack(Resource.Drawable.other2_icon, "Life Is a Highway", "Rascal Flats", 145, 7.99,"Rock"),
+            new OtherTrack(Resource.Drawable.other4_icon, "N.Y. State of Mind", "Nas", 150, 20.55, "Rap")
         };
 
         // Constructor to initialize the list

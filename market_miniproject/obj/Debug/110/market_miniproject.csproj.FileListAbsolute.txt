@@ -766,7 +766,6 @@ C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\mipmap-xxxhdpi\ic_launcher_foreground.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\mipmap-xxxhdpi\ic_launcher_round.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\loginregister_page.xml
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\home_page.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\contactus.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\email.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\sms.png
@@ -777,14 +776,11 @@ C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\user.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\more.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\history.png
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\shoppingcart.xml
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\tab_indicator.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\individualitem.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\info.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\individualinfo.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\cart.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\back.png
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\cart_individualitem.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\plus.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\minus.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\removefromcart.xml
@@ -958,7 +954,6 @@ C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\com\google\android\material\R.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\com\google\android\material\snackbar\Snackbar_SnackbarActionClickImplementor.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\AccountFragment.java
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\Activity_homePage.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\AddNewTrack_Activity.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\CartFragment.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\HomeFragment.java
@@ -967,7 +962,6 @@ C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\MainPageActivity.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\MoreFragment.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\ProductsFragment.java
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\ShoppingCartActivity.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\ShoppingCartAdapter_Track.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc642a63a3442ab50ae3\TrackAdapter.java
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\android\src\crc64396a3fe5f8138e3f\CustomTabsServiceConnectionImpl.java

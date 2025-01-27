@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using market_miniproject.Classes;
@@ -45,13 +46,13 @@ namespace market_miniproject
 
             var view = convertView;
             if (view == null)
-                view = LayoutInflater.From(_context).Inflate(Resource.Layout.cart_individualItem, parent, false);
+                view = LayoutInflater.From(_context).Inflate(Resource.Layout.individualItem, parent, false);
 
-            var _trackIcon_cart = view.FindViewById<ImageView>(Resource.Id.trackTypeImg_cart);
-            var _trackTitle_cart = view.FindViewById<TextView>(Resource.Id.trackTitle_cart);
-            var _trackAuthor_cart = view.FindViewById<TextView>(Resource.Id.trackAuthor_cart);
-            var _itemPrice_cart = view.FindViewById<TextView>(Resource.Id.itemPrice_cart);
-            var _removeFromCartBtn = view.FindViewById<Button>(Resource.Id.removeFromCartBtn);
+            var _trackIcon_cart = view.FindViewById<ImageView>(Resource.Id.trackTypeImg_products);
+            var _trackTitle_cart = view.FindViewById<TextView>(Resource.Id.trackTitle_products);
+            var _trackAuthor_cart = view.FindViewById<TextView>(Resource.Id.trackAuthor_products);
+            var _itemPrice_cart = view.FindViewById<TextView>(Resource.Id.itemPrice_products);
+            var _removeFromCartBtn = view.FindViewById<Button>(Resource.Id.addToCartBtn);
             //var _itemsAmount = view.FindViewById<TextView>(Resource.Id.itemsAmount_cart);
             //var _minus = view.FindViewById<ImageButton>(Resource.Id.minus_cart);
             //var _plus = view.FindViewById<ImageButton>(Resource.Id.plus_cart);
@@ -67,6 +68,9 @@ namespace market_miniproject
             _removeFromCartBtn.Click -= _removeFromCartBtn_Click;
             _removeFromCartBtn.Click += _removeFromCartBtn_Click;
             _removeFromCartBtn.Tag = position;
+
+            _removeFromCartBtn.Text = "Remove";
+            _removeFromCartBtn.SetBackgroundColor(Color.Red);
 
 
             double _updatedTotalPrice = 0;

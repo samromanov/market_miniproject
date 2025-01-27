@@ -88,7 +88,6 @@ namespace market_miniproject
     {
         private TrackAdapter _productsAdapter;
         private ListView _products_listview;
-        private SearchView _search_products;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -103,27 +102,11 @@ namespace market_miniproject
             base.OnViewCreated(view, savedInstanceState);
 
             _products_listview = view.FindViewById<ListView>(Resource.Id.products_listView);
-            _search_products = view.FindViewById<SearchView>(Resource.Id.searchProducts);
 
             _productsAdapter = new TrackAdapter(Context, ProductsList.productsList);
             _products_listview.Adapter = _productsAdapter;
 
-            // SearchView query text listener
-            _search_products.QueryTextChange += (s, e) =>
-            {
-                var searchText = e.NewText.ToLower();
-                var filteredItems = ProductsList.productsList.Where(item => item.TrackTitle.ToLower().Contains(searchText)).ToList();
-
-                _productsAdapter.Clear();
-                _productsAdapter.AddAll(filteredItems);
-                _productsAdapter.NotifyDataSetChanged();
-            };
-
-            _search_products.QueryTextSubmit += (s, e) =>
-            {
-                Toast.MakeText(Context, $"Searching for: {e.Query}", ToastLength.Short).Show();
-                e.Handled = true;
-            };
+            
         }
     }
 
@@ -132,7 +115,7 @@ namespace market_miniproject
         private ListView _cart_listView;
         private TextView _totalPrice;
         private ShoppingCartAdapter_Track _cartAdapter;
-        private Button checkOutBtn;
+        private Button checkOutBtn, prevOrdersBtn;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -152,7 +135,9 @@ namespace market_miniproject
             _totalPrice = view.FindViewById<TextView>(Resource.Id.totalPriceTxt);
             _cart_listView = view.FindViewById<ListView>(Resource.Id.cart_listView);
             checkOutBtn = view.FindViewById<Button>(Resource.Id.checkOutBtn);
+            prevOrdersBtn = view.FindViewById<Button>(Resource.Id.previousOrdersBtn);
 
+            //prevOrdersBtn.Click += PrevOrdersBtn_Click;
             //checkOutBtn.Click += CheckOutBtn_Click; //***work on it in the future***
 
             double total = 0;
@@ -165,6 +150,12 @@ namespace market_miniproject
             _cartAdapter = new ShoppingCartAdapter_Track(Context, _totalPrice, ShoppingCartList.shoppingCartList);
             _cart_listView.Adapter = _cartAdapter;
         }
+
+        private void PrevOrdersBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void CheckOutBtn_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
