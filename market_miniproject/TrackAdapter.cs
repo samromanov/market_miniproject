@@ -1,5 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.Res;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -71,6 +73,11 @@ namespace market_miniproject
             _trackTypeImg_products.Click -= TrackTypeImg_products_Click;
             _trackTypeImg_products.Click += TrackTypeImg_products_Click;
 
+
+            _addToCartBtn.Text = "Add";
+            // Change the background tint dynamically
+            var color = Color.ParseColor("#008000"); // Green color
+            _addToCartBtn.BackgroundTintList = ColorStateList.ValueOf(color);
 
             _trackTypeImg_products.SetImageResource(item.ImageId); // change the icon of the track             
             _trackTitle_products.Text = item.TrackTitle;

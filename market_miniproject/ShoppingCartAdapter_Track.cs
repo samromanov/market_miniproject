@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
@@ -70,7 +71,10 @@ namespace market_miniproject
             _removeFromCartBtn.Tag = position;
 
             _removeFromCartBtn.Text = "Remove";
-            _removeFromCartBtn.SetBackgroundColor(Color.Red);
+            _removeFromCartBtn.TextSize = 10f;
+            // Change the background tint dynamically
+            var color = Color.ParseColor("#FF0000"); // Red color
+            _removeFromCartBtn.BackgroundTintList = ColorStateList.ValueOf(color);
 
 
             double _updatedTotalPrice = 0;

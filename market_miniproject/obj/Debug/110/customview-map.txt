@@ -1,6 +1,7 @@
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\110\res\layout\main_page.xml
+androidx.viewpager2.widget.ViewPager2;obj\Debug\110\res\layout\fragment_home.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_main.xml
@@ -21,8 +22,10 @@ external-path;C:\Users\timov\source\repos\samromanov\market_miniproject\market_m
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 FrameLayout;obj\Debug\110\res\layout\addnewtrack.xml
+FrameLayout;obj\Debug\110\res\layout\individualitem.xml
 FrameLayout;obj\Debug\110\res\layout\main_page.xml
 ImageButton;obj\Debug\110\res\layout\editicon_sample.xml
+ImageButton;obj\Debug\110\res\layout\individualitem.xml
 ImageView;obj\Debug\110\res\layout\activity_main.xml
 ImageView;obj\Debug\110\res\layout\addnewtrack.xml
 ImageView;obj\Debug\110\res\layout\contactus.xml

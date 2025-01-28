@@ -777,7 +777,6 @@ C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\more.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\history.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\individualitem.xml
-C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\info.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\layout\individualinfo.xml
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\cart.png
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\back.png
@@ -1071,3 +1070,5 @@ C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\info_icon.png
+C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\res\drawable\info_icon2.png

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,15 +9,20 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:clickable="true"
+        <FrameLayout
             android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/classics_icon"
-            android:id="@+id/trackTypeImg_products"/>
+            android:layout_height="70dp">
+            <ImageView
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/classics_icon"
+                android:id="@+id/trackTypeImg_products"/>
+        </FrameLayout>
         <LinearLayout
             android:layout_marginLeft="10dp"
-            android:layout_width="200dp"
+            android:layout_width="170dp"
             android:layout_height="70dp"
             android:orientation="vertical">
             <TextView
@@ -34,9 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <LinearLayout       
+        <LinearLayout
             android:orientation="vertical"
-            android:background="#D3DDE6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
@@ -48,10 +53,8 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/addToCartBtn"
-                android:backgroundTint="@android:color/holo_green_dark"
-                android:textSize="10dp"
-                android:text="add to cart"
-                android:layout_width="80dp"
+                android:text="add"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"/>
         </LinearLayout>
     </LinearLayout>
