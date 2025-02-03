@@ -1,7 +1,6 @@
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\110\res\layout\main_page.xml
-androidx.viewpager2.widget.ViewPager2;obj\Debug\110\res\layout\fragment_home.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_main.xml
@@ -11,6 +10,7 @@ Button;obj\Debug\110\res\layout\fragment_more.xml
 Button;obj\Debug\110\res\layout\individualitem.xml
 Button;obj\Debug\110\res\layout\loginregister_page.xml
 Button;obj\Debug\110\res\layout\removefromcart.xml
+Button;obj\Debug\110\res\layout\settings_page.xml
 cache-path;C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
@@ -25,7 +25,6 @@ FrameLayout;obj\Debug\110\res\layout\addnewtrack.xml
 FrameLayout;obj\Debug\110\res\layout\individualitem.xml
 FrameLayout;obj\Debug\110\res\layout\main_page.xml
 ImageButton;obj\Debug\110\res\layout\editicon_sample.xml
-ImageButton;obj\Debug\110\res\layout\individualitem.xml
 ImageView;obj\Debug\110\res\layout\activity_main.xml
 ImageView;obj\Debug\110\res\layout\addnewtrack.xml
 ImageView;obj\Debug\110\res\layout\contactus.xml
@@ -47,6 +46,7 @@ LinearLayout;obj\Debug\110\res\layout\individualinfo.xml
 LinearLayout;obj\Debug\110\res\layout\individualitem.xml
 LinearLayout;obj\Debug\110\res\layout\loginregister_page.xml
 LinearLayout;obj\Debug\110\res\layout\removefromcart.xml
+LinearLayout;obj\Debug\110\res\layout\settings_page.xml
 ListView;obj\Debug\110\res\layout\fragment_cart.xml
 ListView;obj\Debug\110\res\layout\fragment_products.xml
 menu;obj\Debug\110\res\menu\bottom_nav_menu.xml
@@ -58,8 +58,10 @@ resources;obj\Debug\110\res\values\ic_launcher_background.xml
 resources;obj\Debug\110\res\values\strings.xml
 resources;obj\Debug\110\res\values\styles.xml
 ScrollView;obj\Debug\110\res\layout\aboutus_individual.xml
+ScrollView;obj\Debug\110\res\layout\settings_page.xml
 string;obj\Debug\110\res\values\strings.xml
 style;obj\Debug\110\res\values\styles.xml
+Switch;obj\Debug\110\res\layout\settings_page.xml
 TextView;obj\Debug\110\res\layout\aboutus_individual.xml
 TextView;obj\Debug\110\res\layout\activity_main.xml
 TextView;obj\Debug\110\res\layout\contactus.xml
@@ -70,3 +72,5 @@ TextView;obj\Debug\110\res\layout\individualinfo.xml
 TextView;obj\Debug\110\res\layout\individualitem.xml
 TextView;obj\Debug\110\res\layout\loginregister_page.xml
 TextView;obj\Debug\110\res\layout\removefromcart.xml
+TextView;obj\Debug\110\res\layout\settings_page.xml
+ToggleButton;obj\Debug\110\res\layout\settings_page.xml

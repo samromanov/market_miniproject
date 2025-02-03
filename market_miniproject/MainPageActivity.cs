@@ -185,7 +185,7 @@ namespace market_miniproject
 
     public class MoreFragment : AndroidX.Fragment.App.Fragment
     {
-        private Button _addNewTrackBtn, _aboutUsBtn;
+        private Button _addNewTrackBtn, _aboutUsBtn, _settingsBtn;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -201,10 +201,19 @@ namespace market_miniproject
 
             _addNewTrackBtn = view.FindViewById<Button>(Resource.Id.addNewTrackBtn);
             _aboutUsBtn = view.FindViewById<Button>(Resource.Id.aboutUsBtn);
+            _settingsBtn = view.FindViewById<Button>(Resource.Id.settingsBtn);
 
+            _settingsBtn.Click += _settingsBtn_Click;
             _addNewTrackBtn.Click += _addNewTrackBtn_Click;
             _aboutUsBtn.Click += _aboutUsBtn_Click;
         }
+
+        private void _settingsBtn_Click(object sender, EventArgs e)
+        {
+            Intent settingsIntent = new Intent(Context, typeof(SettingsPageActivity));
+            StartActivity(settingsIntent);
+        }
+
         private void _aboutUsBtn_Click(object sender, System.EventArgs e)
         {
             var aboutUs_dialog = new Dialog(Context);

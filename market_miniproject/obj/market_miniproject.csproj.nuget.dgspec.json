@@ -44,13 +44,33 @@
               "target": "Package",
               "version": "[1.2.0.5, )"
             },
+            "Xamarin.AndroidX.Media": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
             },
+            "Xamarin.Firebase.Auth": {
+              "target": "Package",
+              "version": "[60.1142.1, )"
+            },
+            "Xamarin.Firebase.Firestore": {
+              "target": "Package",
+              "version": "[60.1142.1, )"
+            },
+            "Xamarin.Firebase.Storage": {
+              "target": "Package",
+              "version": "[60.1142.1, )"
+            },
             "Xamarin.Google.Android.Material": {
               "target": "Package",
               "version": "[1.0.0.1, )"
+            },
+            "Xamarin.Google.Guava": {
+              "target": "Package",
+              "version": "[27.1.0.1, )"
             }
           }
         }

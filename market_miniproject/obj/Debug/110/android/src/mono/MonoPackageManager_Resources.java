@@ -3,6 +3,14 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "market_miniproject.dll" comes first in this list. */
 		"market_miniproject.dll",
+		"Square.OkHttp.dll",
+		"Square.OkIO.dll",
+		"Xamarin.Android.Support.Annotations.dll",
+		"Xamarin.Android.Support.Compat.dll",
+		"Xamarin.Android.Support.Core.UI.dll",
+		"Xamarin.Android.Support.Core.Utils.dll",
+		"Xamarin.Android.Support.Fragment.dll",
+		"Xamarin.Android.Support.Media.Compat.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
 		"Xamarin.AndroidX.AppCompat.AppCompatResources.dll",
@@ -30,6 +38,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll",
 		"Xamarin.AndroidX.Loader.dll",
 		"Xamarin.AndroidX.LocalBroadcastManager.dll",
+		"Xamarin.AndroidX.Media.dll",
 		"Xamarin.AndroidX.MultiDex.dll",
 		"Xamarin.AndroidX.Print.dll",
 		"Xamarin.AndroidX.RecyclerView.dll",
@@ -42,8 +51,18 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.VersionedParcelable.dll",
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.Essentials.dll",
+		"Xamarin.Firebase.Auth.dll",
+		"Xamarin.Firebase.Common.dll",
+		"Xamarin.Firebase.Firestore.dll",
+		"Xamarin.Firebase.Storage.Common.dll",
+		"Xamarin.Firebase.Storage.dll",
 		"Xamarin.Google.Android.Material.dll",
+		"Xamarin.Google.Guava.dll",
+		"Xamarin.Google.Guava.FailureAccess.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Xamarin.GooglePlayServices.Base.dll",
+		"Xamarin.GooglePlayServices.Basement.dll",
+		"Xamarin.GooglePlayServices.Tasks.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

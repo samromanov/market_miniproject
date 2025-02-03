@@ -30,9 +30,9 @@
                 android:textSize="20dp"
                 android:textColor="@android:color/black"
                 android:gravity="center"
-                android:text="Minuet"
+                android:text="Track Title"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="30dp"/>
             <TextView
                 android:id="@+id/trackAuthor_products"
                 android:textSize="15dp"

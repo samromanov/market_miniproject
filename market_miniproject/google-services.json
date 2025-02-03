@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "823306006075",
+    "project_id": "sam-sang",
+    "storage_bucket": "sam-sang.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823306006075:android:81603042a14cdc1c46361e",
+        "android_client_info": {
+          "package_name": "com.companyname.market_miniproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-ny5-fWq4yG6NavzaG02IuY2RNlpxKL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

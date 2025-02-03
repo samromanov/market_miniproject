@@ -19,4 +19,11 @@
         android:text="About Us"
         android:layout_width="300dp"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/settingsBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Settings"
+        android:textAllCaps="false"/>
 </LinearLayout>

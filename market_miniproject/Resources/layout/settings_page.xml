@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Settings"
+            android:textSize="23dp"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="430dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Light mode"/>
+            <Switch
+                android:id="@+id/themeSwitch"
+                android:checked="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Switch>
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Dark mode"/>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <Button
+            android:id="@+id/cancel_settingsBtn"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="cancel"/>
+        <Button
+            android:id="@+id/save_settingsBtn"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="save"/>
+        <Button
+            android:id="@+id/saveAndExit_settingsBtn"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="save and exit"/>
+    </LinearLayout>/>
+</LinearLayout>

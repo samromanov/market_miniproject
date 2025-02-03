@@ -73,3 +73,17 @@ androidx.appcompat.appcompat-resources.aar
 androidx.appcompat.appcompat.aar
 com.google.android.material.material.aar
 androidx.browser.browser.aar
+Xamarin.AndroidX.Media.dll
+androidx.media.media.aar
+Xamarin.Google.Guava.dll
+Xamarin.Google.Guava.FailureAccess.dll
+Xamarin.Firebase.Auth.dll
+Xamarin.Firebase.Common.dll
+Xamarin.GooglePlayServices.Base.dll
+Xamarin.GooglePlayServices.Basement.dll
+Xamarin.GooglePlayServices.Tasks.dll
+Square.OkHttp.dll
+Square.OkIO.dll
+Xamarin.Firebase.Firestore.dll
+Xamarin.Firebase.Storage.Common.dll
+Xamarin.Firebase.Storage.dll
