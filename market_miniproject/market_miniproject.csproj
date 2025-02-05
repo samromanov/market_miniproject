@@ -67,6 +67,7 @@
     <Compile Include="Classes\OtherTrack.cs" />
     <Compile Include="Classes\RockTrack.cs" />
     <Compile Include="Classes\Track.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="FirebaseHelper.cs" />
     <Compile Include="LoginRegister.cs" />
     <Compile Include="MainActivity.cs" />
