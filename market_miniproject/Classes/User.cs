@@ -30,6 +30,7 @@ namespace market_miniproject.Classes
 
         public const string COLLECTION_NAME = "users";
         public const string CURRENT_USER_FILE = "currentUserFile";
+        public string JOIN_DATE;
 
 
 
@@ -46,6 +47,7 @@ namespace market_miniproject.Classes
             this.Password = password;
             this.firebaseAuthentication = FirebaseHelper.GetFirebaseAuthentication();
             this.database = FirebaseHelper.GetFirestore();
+            this.JOIN_DATE = DateTime.Now.ToString("dd/MM/yyyy");
         }
         public User(string email, string password) // when logging in
         {
@@ -53,23 +55,61 @@ namespace market_miniproject.Classes
             this.Password = password;
             this.firebaseAuthentication = FirebaseHelper.GetFirebaseAuthentication();
             this.database = FirebaseHelper.GetFirestore();
+            this.JOIN_DATE = DateTime.Now.ToString("dd/MM/yyyy");
         }
+
+        //public async Task<bool> Login()
+        //{
+        //    try
+        //    {
+        //        await this.firebaseAuthentication.SignInWithEmailAndPassword(this.Email, this.Password);
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Toast.MakeText(Application.Context, $"Error: {ex.Message}", ToastLength.Short).Show();
+        //        return false;
+        //    }
+        //}
 
         public async Task<bool> Login()
         {
             try
             {
                 await this.firebaseAuthentication.SignInWithEmailAndPassword(this.Email, this.Password);
-                return true;
+                var editor = Application.Context.GetSharedPreferences(CURRENT_USER_FILE, FileCreationMode.Private).Edit();
+                editor.PutString("email", this.Email);
+                editor.PutString("password", this.Password);
+                editor.PutString("date", this.JOIN_DATE);
+                editor.Apply();
+
             }
             catch (Exception ex)
             {
                 Toast.MakeText(Application.Context, $"Error: {ex.Message}", ToastLength.Short).Show();
                 return false;
             }
+            return true;
         }
 
-        public async Task<bool> Register()
+        public async Task<bool> Logout()
+        {
+            try
+            {
+                var editor = Application.Context.GetSharedPreferences(CURRENT_USER_FILE, FileCreationMode.Private).Edit();
+                editor.PutString("email", "");
+                editor.PutString("password", "");
+                editor.PutString("date", "");
+                editor.Apply();
+                firebaseAuthentication.SignOut();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+        public async Task<bool> Register(bool isAdmin = false)
         {
             try
             {
@@ -87,17 +127,18 @@ namespace market_miniproject.Classes
                 //userMap.Put("fullName", this.Name);
                 userMap.Put("email", this.Email);
                 userMap.Put("password", this.Password);
-                DocumentReference userReference = this.database.Collection(COLLECTION_NAME).Document(this.firebaseAuthentication.Uid);
+                userMap.Put("date", this.JOIN_DATE);
+                userMap.Put("isAdmiin", isAdmin);
+                DocumentReference userReference = this.database.Collection(COLLECTION_NAME).Document(this.firebaseAuthentication.CurrentUser.Uid); 
+                // creates me the user with the same Uid as in the firebase authentication
                 await userReference.Set(userMap);
-
-
-                return true;
             }
             catch (Exception ex)
             {
                 Toast.MakeText(Application.Context, $"Error: {ex.Message}", ToastLength.Short).Show();
                 return false;
             }
+            return true;
         }
     }
 }

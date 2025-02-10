@@ -122,7 +122,10 @@ namespace market_miniproject
 
                                 Toast.MakeText(this, "You're successfully registered", ToastLength.Short).Show();
                                 Intent intent = new Intent(this, typeof(MainPageActivity));
-                                StartActivity(intent);
+                                intent.PutExtra("email", _email.Text);
+                                intent.PutExtra("password", _password.Text);
+                                intent.PutExtra("dateJoined", DateTime.Now.ToString("dd/MM/yyyy"));
+                                StartActivityForResult(intent, 100);
                             }
                             else
                             {

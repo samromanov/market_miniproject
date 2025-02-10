@@ -1,25 +1,22 @@
-# Works around b/62196552
--keep public interface * extends io.grpc.Metadata$TrustedAsciiMarshaller
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-# Providers use their name to load files from META-INF
--keepnames class io.grpc.ServerProvider
--keepnames class io.grpc.ManagedChannelProvider
--keepnames class io.grpc.NameResolverProvider
+# CoordinatorLayout resolves the behaviors of its child components with reflection.
+-keep public class * extends androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}
 
-# Needed for DNS resolution.  Present in OpenJDK, but not Android
--dontwarn javax.naming.**
-
-# The Provider implementations must be kept and retain their names, since the
-# names are referenced from META-INF
--keep class io.grpc.internal.DnsNameResolverProvider
-
-# GrpcUtil is calling getPackage().getImplementationVersion().
--keeppackagenames io.grpc.internal
-
--dontwarn java.lang.ClassValue
--dontwarn com.google.common.base.**
--dontwarn com.google.errorprone.annotations.**
--dontwarn com.google.j2objc.annotations.**
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
--dontwarn javax.annotation.**
--keep class io.grpc.okhttp.OkHttpChannelProvider
+# Make sure we keep annotations for CoordinatorLayout's DefaultBehavior
+-keepattributes *Annotation*

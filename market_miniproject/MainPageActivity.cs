@@ -8,16 +8,23 @@ using AndroidX.Fragment.App;
 using Google.Android.Material.BottomNavigation;
 using System;
 using System.Linq;
+using market_miniproject.Classes;
 
 namespace market_miniproject
 {
     [Activity(Label = "MainPageActivity")]
     public class MainPageActivity : AppCompatActivity
     {
+        private string logInEmail, logInPassword;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.main_page);
+
+            logInEmail = Intent.GetStringExtra("email");
+            logInPassword = Intent.GetStringExtra("password");
+
+            Toast.MakeText(this, $"Welcome {logInEmail}", ToastLength.Short).Show();
 
             var bottomNavigationView = FindViewById<BottomNavigationView>(Resource.Id.bottomNavigationView);
 
@@ -56,13 +63,21 @@ namespace market_miniproject
 
         private void LoadFragment(AndroidX.Fragment.App.Fragment fragment)
         {
+            if (fragment is AccountFragment accountFragment)
+            {
+                Bundle bundle = new Bundle();
+                bundle.PutString("email", logInEmail);
+                bundle.PutString("password", logInPassword);
+                accountFragment.Arguments = bundle;
+            }
+
             SupportFragmentManager.BeginTransaction()
                 .Replace(Resource.Id.frameLayout, fragment)
                 .Commit();
         }
     }
 
-    // Example Fragment Classes
+    //  Fragment Classes
     public class HomeFragment : AndroidX.Fragment.App.Fragment
     {
         public override void OnCreate(Bundle savedInstanceState)
@@ -79,7 +94,6 @@ namespace market_miniproject
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
-
 
         }
     }
@@ -164,11 +178,17 @@ namespace market_miniproject
 
     public class AccountFragment : AndroidX.Fragment.App.Fragment
     {
+        ImageView persAccountImg;
+        TextView accountUsernameTxt, accountDateJoinedTxt;
+        Button logOutBtn;
+        Dialog logOutOrNotDialog;
+        string email, password, dateJoined;
+        
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Initialize data here
-
+            
 
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -179,7 +199,62 @@ namespace market_miniproject
         {
             base.OnViewCreated(view, savedInstanceState);
 
+            persAccountImg = view.FindViewById<ImageView>(Resource.Id.persAccountImg);
+            accountUsernameTxt = view.FindViewById<TextView>(Resource.Id.accountUsernameTxt);
+            accountDateJoinedTxt = view.FindViewById<TextView>(Resource.Id.accountDateJoinedTxt);
+            logOutBtn = view.FindViewById<Button>(Resource.Id.logOutBtn);
 
+            // Retrieve arguments from MainPageActivity
+            email = Arguments?.GetString("email", "Guest") ?? "Guest"; // if the email didn't pass, it will display "Guest" instead of the email
+            password = Arguments?.GetString("password");
+            dateJoined = Arguments?.GetString("dateJoined");
+            accountUsernameTxt.Text = $"Email: {email}";
+            accountDateJoinedTxt.Text = $"Date joined: {dateJoined}";
+
+            logOutBtn.Click -= LogOutBtn_Click;
+            logOutBtn.Click += LogOutBtn_Click;
+        }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            logOutOrNotDialog = new Dialog(Context);
+            logOutOrNotDialog.SetContentView(Resource.Layout.removeFromCart);
+            var yesOrNoTxt = logOutOrNotDialog.FindViewById<TextView>(Resource.Id.yesOrNoTxt);
+            var _dontLogout = logOutOrNotDialog.FindViewById<Button>(Resource.Id.dontRemoveBtn);
+            var _logOut = logOutOrNotDialog.FindViewById<Button>(Resource.Id.removeBtn);
+            yesOrNoTxt.Text = "Want to log out?";
+            _dontLogout.Click -= (s, args) => logOutOrNotDialog.Dismiss();
+            _dontLogout.Click += (s, args) => logOutOrNotDialog.Dismiss(); // cancel -> closes the dialog
+            _logOut.Click -= _logOut_Click;
+            _logOut.Click += _logOut_Click; ; // agree -> logs out
+
+            logOutOrNotDialog.Show();
+
+        }
+
+        private async void _logOut_Click(object sender, EventArgs e)
+        {
+            User user = new User(email, password);
+            try
+            {
+                if (await user.Logout() == true)
+                {
+                    logOutOrNotDialog.Dismiss();
+                    Toast.MakeText(Context, "Logout successfully", ToastLength.Short).Show();
+                    Intent intent = new Intent(Activity, typeof(LoginRegister));
+                    intent.AddFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
+                    StartActivity(intent);
+                    Activity?.Finish();
+                }
+                else
+                {
+                    Toast.MakeText(Context, "Logout failed", ToastLength.Short).Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(Context, ex.Message, ToastLength.Short).Show();
+            }
         }
     }
 
@@ -232,4 +307,5 @@ namespace market_miniproject
 
         }
     }
+
 }

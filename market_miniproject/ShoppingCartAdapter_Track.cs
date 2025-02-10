@@ -100,8 +100,10 @@ namespace market_miniproject
             int position = (int)clickedButton.Tag;
             removeOrNotDialog = new Dialog(_context);
             removeOrNotDialog.SetContentView(Resource.Layout.removeFromCart);
+            var yesOrNoTxt = removeOrNotDialog.FindViewById<TextView>(Resource.Id.yesOrNoTxt);
             var _dontRemoveBtn = removeOrNotDialog.FindViewById<Button>(Resource.Id.dontRemoveBtn);
             var _removeBtn = removeOrNotDialog.FindViewById<Button>(Resource.Id.removeBtn);
+            yesOrNoTxt.Text = "Remove item from cart?";
             _removeBtn.Tag = position;
             _dontRemoveBtn.Click -= (s, args) => removeOrNotDialog.Dismiss();
             _dontRemoveBtn.Click += (s, args) => removeOrNotDialog.Dismiss(); // cancel -> closes the dialog
