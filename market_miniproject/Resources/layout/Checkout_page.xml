@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#D3DDE6"
+        android:layout_width="330dp"
+        android:layout_height="400dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <TextView
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total price: "/>
+            <TextView
+                android:id="@+id/checkOutTotalPrice"
+                android:textSize="15dp"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$$$$"/>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="280dp">
+            <EditText
+                android:singleLine="true"
+                android:hint=" Full name"
+                android:background="@android:color/white"
+                android:layout_width="250dp"
+                android:layout_height="45dp"/>
+            <EditText
+                android:singleLine="true"
+                android:layout_marginTop="10dp"
+                android:hint=" Address"
+                android:background="@android:color/white"
+                android:layout_width="250dp"
+                android:layout_height="45dp"/>
+            <EditText
+                android:singleLine="true"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:hint=" Card number"
+                android:background="@android:color/white"
+                android:layout_width="250dp"
+                android:layout_height="45dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/buyNowBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buy now"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

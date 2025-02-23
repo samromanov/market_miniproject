@@ -26,19 +26,18 @@
             android:layout_width="match_parent"
             android:layout_height="100dp">
             <TextView
-                android:textSize="20dp"
                 android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Username"
-            android:id="@+id/accountUsernameTxt"/>
+                android:id="@+id/accountUsernameTxt"/>
 
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="date joined"
-            android:id="@+id/accountDateJoinedTxt"/>
+                android:id="@+id/accountDateJoinedTxt"/>
         </LinearLayout>
     </LinearLayout>
     <ScrollView
@@ -52,5 +51,5 @@
             android:backgroundTint="@android:color/holo_red_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    </ScrollView>/>
+    </ScrollView>
 </LinearLayout>

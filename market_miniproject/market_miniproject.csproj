@@ -38,6 +38,10 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -62,8 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddNewTrack_Activity.cs" />
+    <Compile Include="CheckOutActivity.cs" />
     <Compile Include="Classes\ClassicalTrack.cs" />
     <Compile Include="Classes\JazzTrack.cs" />
+    <Compile Include="Classes\OrderInfo.cs" />
     <Compile Include="Classes\OtherTrack.cs" />
     <Compile Include="Classes\RockTrack.cs" />
     <Compile Include="Classes\Track.cs" />
@@ -72,6 +78,7 @@
     <Compile Include="LoginRegister.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainPageActivity.cs" />
+    <Compile Include="PrevOrdersListAdapter.cs" />
     <Compile Include="ProductsList.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -280,6 +287,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\settings_page.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\previousOrders_page.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Checkout_page.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

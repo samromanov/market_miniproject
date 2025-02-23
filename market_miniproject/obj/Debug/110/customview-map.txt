@@ -5,6 +5,7 @@ background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_main.xml
 Button;obj\Debug\110\res\layout\addnewtrack.xml
+Button;obj\Debug\110\res\layout\checkout_page.xml
 Button;obj\Debug\110\res\layout\fragment_account.xml
 Button;obj\Debug\110\res\layout\fragment_cart.xml
 Button;obj\Debug\110\res\layout\fragment_more.xml
@@ -17,6 +18,7 @@ color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
 com.google.android.material.bottomnavigation.BottomNavigationView;obj\Debug\110\res\layout\main_page.xml
 EditText;obj\Debug\110\res\layout\addnewtrack.xml
+EditText;obj\Debug\110\res\layout\checkout_page.xml
 EditText;obj\Debug\110\res\layout\loginregister_page.xml
 external-cache-path;C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -38,6 +40,7 @@ item;obj\Debug\110\res\values\styles.xml
 LinearLayout;obj\Debug\110\res\layout\aboutus_individual.xml
 LinearLayout;obj\Debug\110\res\layout\activity_main.xml
 LinearLayout;obj\Debug\110\res\layout\addnewtrack.xml
+LinearLayout;obj\Debug\110\res\layout\checkout_page.xml
 LinearLayout;obj\Debug\110\res\layout\contactus.xml
 LinearLayout;obj\Debug\110\res\layout\editicon_sample.xml
 LinearLayout;obj\Debug\110\res\layout\fragment_account.xml
@@ -48,10 +51,12 @@ LinearLayout;obj\Debug\110\res\layout\fragment_products.xml
 LinearLayout;obj\Debug\110\res\layout\individualinfo.xml
 LinearLayout;obj\Debug\110\res\layout\individualitem.xml
 LinearLayout;obj\Debug\110\res\layout\loginregister_page.xml
+LinearLayout;obj\Debug\110\res\layout\previousorders_page.xml
 LinearLayout;obj\Debug\110\res\layout\removefromcart.xml
 LinearLayout;obj\Debug\110\res\layout\settings_page.xml
 ListView;obj\Debug\110\res\layout\fragment_cart.xml
 ListView;obj\Debug\110\res\layout\fragment_products.xml
+ListView;obj\Debug\110\res\layout\previousorders_page.xml
 menu;obj\Debug\110\res\menu\bottom_nav_menu.xml
 paths;C:\Users\timov\source\repos\samromanov\market_miniproject\market_miniproject\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RadioButton;obj\Debug\110\res\layout\addnewtrack.xml
@@ -68,6 +73,7 @@ style;obj\Debug\110\res\values\styles.xml
 Switch;obj\Debug\110\res\layout\settings_page.xml
 TextView;obj\Debug\110\res\layout\aboutus_individual.xml
 TextView;obj\Debug\110\res\layout\activity_main.xml
+TextView;obj\Debug\110\res\layout\checkout_page.xml
 TextView;obj\Debug\110\res\layout\contactus.xml
 TextView;obj\Debug\110\res\layout\fragment_account.xml
 TextView;obj\Debug\110\res\layout\fragment_cart.xml

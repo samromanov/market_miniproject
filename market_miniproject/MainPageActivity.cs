@@ -9,13 +9,14 @@ using Google.Android.Material.BottomNavigation;
 using System;
 using System.Linq;
 using market_miniproject.Classes;
+using System.Threading.Tasks;
 
 namespace market_miniproject
 {
     [Activity(Label = "MainPageActivity")]
     public class MainPageActivity : AppCompatActivity
     {
-        private string logInEmail, logInPassword;
+        private string logInEmail, logInPassword, logInJoinDate;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,6 +24,7 @@ namespace market_miniproject
 
             logInEmail = Intent.GetStringExtra("email");
             logInPassword = Intent.GetStringExtra("password");
+            logInJoinDate = Intent.GetStringExtra("joinDate");
 
             Toast.MakeText(this, $"Welcome {logInEmail}", ToastLength.Short).Show();
 
@@ -68,7 +70,23 @@ namespace market_miniproject
                 Bundle bundle = new Bundle();
                 bundle.PutString("email", logInEmail);
                 bundle.PutString("password", logInPassword);
+                bundle.PutString("joinDate", logInJoinDate);
                 accountFragment.Arguments = bundle;
+                
+            }
+            if (fragment is CartFragment cartFragment)
+            {
+                Bundle bundle = new Bundle();
+                bundle.PutString("email", logInEmail);
+                cartFragment.Arguments = bundle;
+            }
+            if (fragment is MoreFragment moreFragment)
+            {
+                Bundle bundle = new Bundle();
+                bundle.PutString("email", logInEmail);
+                bundle.PutString("password", logInPassword);
+                bundle.PutString("joinDate", logInJoinDate);
+                moreFragment.Arguments = bundle;
             }
 
             SupportFragmentManager.BeginTransaction()
@@ -126,6 +144,7 @@ namespace market_miniproject
 
     public class CartFragment : AndroidX.Fragment.App.Fragment
     {
+        private Dialog checkOutDialog , previousOrdersDialog;
         private ListView _cart_listView;
         private TextView _totalPrice;
         private ShoppingCartAdapter_Track _cartAdapter;
@@ -151,15 +170,15 @@ namespace market_miniproject
             checkOutBtn = view.FindViewById<Button>(Resource.Id.checkOutBtn);
             prevOrdersBtn = view.FindViewById<Button>(Resource.Id.previousOrdersBtn);
 
-            //prevOrdersBtn.Click += PrevOrdersBtn_Click;
-            //checkOutBtn.Click += CheckOutBtn_Click; //***work on it in the future***
+            prevOrdersBtn.Click += PrevOrdersBtn_Click;
+            checkOutBtn.Click += CheckOutBtn_Click; //***work on it in the future***
 
             double total = 0;
             foreach (var item in ShoppingCartList.shoppingCartList) // go over all the products in cart to count the total price
             {
                 total += item.Price;
             }
-            _totalPrice.Text = total.ToString();
+            _totalPrice.Text = total.ToString() + "$";
 
             _cartAdapter = new ShoppingCartAdapter_Track(Context, _totalPrice, ShoppingCartList.shoppingCartList);
             _cart_listView.Adapter = _cartAdapter;
@@ -167,12 +186,43 @@ namespace market_miniproject
 
         private void PrevOrdersBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            previousOrdersDialog = new Dialog(Context);
+            previousOrdersDialog.SetContentView(Resource.Layout.previousOrders_page);
+            var previousOrders_listView = previousOrdersDialog.FindViewById<ListView>(Resource.Id.prevOrdersLv);
+
+            previousOrdersDialog.Show(); 
         }
 
         private void CheckOutBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            checkOutDialog = new Dialog(Context);
+            checkOutDialog.SetContentView(Resource.Layout.Checkout_page);
+            var checkOutTotalPriceTxt = checkOutDialog.FindViewById<TextView>(Resource.Id.checkOutTotalPrice);
+            var buyNowBtn = checkOutDialog.FindViewById<Button>(Resource.Id.buyNowBtn);
+            checkOutTotalPriceTxt.Text = _totalPrice.Text + "$";
+            buyNowBtn.Click -= BuyNowBtn_ClickAsync;
+            buyNowBtn.Click += BuyNowBtn_ClickAsync;
+            var email = Arguments?.GetString("email");
+            checkOutDialog.Show();
+        }
+
+        private async void BuyNowBtn_ClickAsync(object sender, EventArgs e)
+        {
+            var email = Arguments?.GetString("email");
+            User user = new User(email);
+            try
+            {
+                if (await user.Purchase(ShoppingCartList.shoppingCartList) == true)
+                {
+                    Toast.MakeText(Application.Context, "Order placed successfully. Cart has been emptied.", ToastLength.Short).Show();
+                    checkOutDialog.Dismiss();
+                }
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(Context, $"Error: {ex.Message}", ToastLength.Short).Show();
+            }
+
         }
     }
 
@@ -207,7 +257,7 @@ namespace market_miniproject
             // Retrieve arguments from MainPageActivity
             email = Arguments?.GetString("email", "Guest") ?? "Guest"; // if the email didn't pass, it will display "Guest" instead of the email
             password = Arguments?.GetString("password");
-            dateJoined = Arguments?.GetString("dateJoined");
+            dateJoined = Arguments?.GetString("joinDate");
             accountUsernameTxt.Text = $"Email: {email}";
             accountDateJoinedTxt.Text = $"Date joined: {dateJoined}";
 

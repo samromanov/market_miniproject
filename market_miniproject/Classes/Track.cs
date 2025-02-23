@@ -11,7 +11,7 @@ using System.Text;
 
 namespace market_miniproject.Classes
 {
-    class Track : Activity
+    public class Track : Activity
     {
         private int imageId;
         private string trackTitle;

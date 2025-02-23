@@ -85,7 +85,10 @@ namespace market_miniproject
                             {
                                 Toast.MakeText(this, "You're successfully logged in", ToastLength.Short).Show();
                                 Intent intent = new Intent(this, typeof(MainPageActivity));
-                                StartActivity(intent);
+                                intent.PutExtra("email", _email.Text);
+                                intent.PutExtra("password", _password.Text);     
+                                StartActivityForResult(intent, 100);
+                                //StartActivity(intent);
                             }
                             else
                             {
@@ -124,8 +127,8 @@ namespace market_miniproject
                                 Intent intent = new Intent(this, typeof(MainPageActivity));
                                 intent.PutExtra("email", _email.Text);
                                 intent.PutExtra("password", _password.Text);
-                                intent.PutExtra("dateJoined", DateTime.Now.ToString("dd/MM/yyyy"));
-                                StartActivityForResult(intent, 100);
+                                intent.PutExtra("joinDate", DateTime.Now.ToString("dd/MM/yyyy"));
+                                StartActivityForResult(intent, 200);
                             }
                             else
                             {
