@@ -10,6 +10,7 @@ using System;
 using System.Linq;
 using market_miniproject.Classes;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace market_miniproject
 {
@@ -144,10 +145,12 @@ namespace market_miniproject
 
     public class CartFragment : AndroidX.Fragment.App.Fragment
     {
+        private EditText _fullNameTxt, _addressTxt, _cardNumberTxt; 
         private Dialog checkOutDialog , previousOrdersDialog;
         private ListView _cart_listView;
         private TextView _totalPrice;
         private ShoppingCartAdapter_Track _cartAdapter;
+        private PreviousOrdersAdapter _prevOrdersAdapter;
         private Button checkOutBtn, prevOrdersBtn;
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -171,7 +174,8 @@ namespace market_miniproject
             prevOrdersBtn = view.FindViewById<Button>(Resource.Id.previousOrdersBtn);
 
             prevOrdersBtn.Click += PrevOrdersBtn_Click;
-            checkOutBtn.Click += CheckOutBtn_Click; //***work on it in the future***
+
+            checkOutBtn.Click += CheckOutBtn_Click; 
 
             double total = 0;
             foreach (var item in ShoppingCartList.shoppingCartList) // go over all the products in cart to count the total price
@@ -184,12 +188,30 @@ namespace market_miniproject
             _cart_listView.Adapter = _cartAdapter;
         }
 
-        private void PrevOrdersBtn_Click(object sender, EventArgs e)
+        private async void PrevOrdersBtn_Click(object sender, EventArgs e)
         {
+            var email = Arguments?.GetString("email");
+            User user = new User(email);
             previousOrdersDialog = new Dialog(Context);
             previousOrdersDialog.SetContentView(Resource.Layout.previousOrders_page);
-            var previousOrders_listView = previousOrdersDialog.FindViewById<ListView>(Resource.Id.prevOrdersLv);
-
+            var _prevOrders_listView = previousOrdersDialog.FindViewById<ListView>(Resource.Id.prevOrdersLv);
+            try
+            {
+                if (await user.FetchOrders() != null )
+                {
+                    List<OrderInfo> _prevOrdersList = new List<OrderInfo>(await user.FetchOrders());
+                    _prevOrdersAdapter = new PreviousOrdersAdapter(Context, _prevOrdersList);
+                    _prevOrders_listView.Adapter = _prevOrdersAdapter;
+                }
+                else
+                {
+                    Toast.MakeText(Context, $"There was a problem showing the list", ToastLength.Short).Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(Context, $"Error: {ex.Message}", ToastLength.Short).Show();
+            }
             previousOrdersDialog.Show(); 
         }
 
@@ -199,8 +221,10 @@ namespace market_miniproject
             checkOutDialog.SetContentView(Resource.Layout.Checkout_page);
             var checkOutTotalPriceTxt = checkOutDialog.FindViewById<TextView>(Resource.Id.checkOutTotalPrice);
             var buyNowBtn = checkOutDialog.FindViewById<Button>(Resource.Id.buyNowBtn);
+            _fullNameTxt = checkOutDialog.FindViewById<EditText>(Resource.Id.fullNameTxt);
+            _addressTxt = checkOutDialog.FindViewById<EditText>(Resource.Id.addressTxt);
+            _cardNumberTxt = checkOutDialog.FindViewById<EditText>(Resource.Id.cardNumberTxt);
             checkOutTotalPriceTxt.Text = _totalPrice.Text + "$";
-            buyNowBtn.Click -= BuyNowBtn_ClickAsync;
             buyNowBtn.Click += BuyNowBtn_ClickAsync;
             var email = Arguments?.GetString("email");
             checkOutDialog.Show();
@@ -208,21 +232,32 @@ namespace market_miniproject
 
         private async void BuyNowBtn_ClickAsync(object sender, EventArgs e)
         {
-            var email = Arguments?.GetString("email");
-            User user = new User(email);
-            try
+            if (_fullNameTxt.Text == "" || _addressTxt.Text == "" || _cardNumberTxt.Text == "")
             {
-                if (await user.Purchase(ShoppingCartList.shoppingCartList) == true)
+                Toast.MakeText(Context, "Empty fields detected", ToastLength.Short).Show();
+            }
+            else if (_cardNumberTxt.Text.Length != 16) // if the length of the card number is not 16 is invalid
+            {
+                Toast.MakeText(Context, "Invalid credit/debit card number", ToastLength.Short).Show();
+            }
+            else
+            {
+                var email = Arguments?.GetString("email");
+                User user = new User(email);
+                try
                 {
-                    Toast.MakeText(Application.Context, "Order placed successfully. Cart has been emptied.", ToastLength.Short).Show();
-                    checkOutDialog.Dismiss();
+                    if (await user.Purchase(ShoppingCartList.shoppingCartList) == true)
+                    {
+                        Toast.MakeText(Application.Context, "Order placed successfully. Cart has been emptied.", ToastLength.Short).Show();
+                        _cartAdapter.NotifyDataSetChanged(); // updates the listview (the shopping cart)
+                        checkOutDialog.Dismiss();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Toast.MakeText(Context, $"Error: {ex.Message}", ToastLength.Short).Show();
                 }
             }
-            catch (Exception ex)
-            {
-                Toast.MakeText(Context, $"Error: {ex.Message}", ToastLength.Short).Show();
-            }
-
         }
     }
 

@@ -3,8 +3,12 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "market_miniproject.dll" comes first in this list. */
 		"market_miniproject.dll",
+		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Square.OkHttp.dll",
 		"Square.OkIO.dll",
+		"System.IO.Pipelines.dll",
+		"System.Text.Encodings.Web.dll",
+		"System.Text.Json.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",
 		"Xamarin.Android.Support.Core.UI.dll",

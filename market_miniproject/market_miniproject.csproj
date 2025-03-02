@@ -70,6 +70,7 @@
     <Compile Include="Classes\ClassicalTrack.cs" />
     <Compile Include="Classes\JazzTrack.cs" />
     <Compile Include="Classes\OrderInfo.cs" />
+    <Compile Include="Classes\OrderItemsEventListener.cs" />
     <Compile Include="Classes\OtherTrack.cs" />
     <Compile Include="Classes\RockTrack.cs" />
     <Compile Include="Classes\Track.cs" />
@@ -78,7 +79,7 @@
     <Compile Include="LoginRegister.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainPageActivity.cs" />
-    <Compile Include="PrevOrdersListAdapter.cs" />
+    <Compile Include="PreviousOrdersAdapter.cs" />
     <Compile Include="ProductsList.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +121,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Text.Json">
+      <Version>9.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />
     <PackageReference Include="Xamarin.AndroidX.Media">
       <Version>1.2.0</Version>
@@ -297,6 +301,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Checkout_page.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\individualOrder.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -35,12 +35,14 @@
             android:layout_width="match_parent"
             android:layout_height="280dp">
             <EditText
+                android:id="@+id/fullNameTxt"
                 android:singleLine="true"
                 android:hint=" Full name"
                 android:background="@android:color/white"
                 android:layout_width="250dp"
                 android:layout_height="45dp"/>
             <EditText
+                android:id="@+id/addressTxt"
                 android:singleLine="true"
                 android:layout_marginTop="10dp"
                 android:hint=" Address"
@@ -48,6 +50,7 @@
                 android:layout_width="250dp"
                 android:layout_height="45dp"/>
             <EditText
+                android:id="@+id/cardNumberTxt"
                 android:singleLine="true"
                 android:inputType="number"
                 android:layout_marginTop="10dp"

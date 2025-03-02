@@ -50,6 +50,7 @@ LinearLayout;obj\Debug\110\res\layout\fragment_more.xml
 LinearLayout;obj\Debug\110\res\layout\fragment_products.xml
 LinearLayout;obj\Debug\110\res\layout\individualinfo.xml
 LinearLayout;obj\Debug\110\res\layout\individualitem.xml
+LinearLayout;obj\Debug\110\res\layout\individualorder.xml
 LinearLayout;obj\Debug\110\res\layout\loginregister_page.xml
 LinearLayout;obj\Debug\110\res\layout\previousorders_page.xml
 LinearLayout;obj\Debug\110\res\layout\removefromcart.xml
@@ -80,6 +81,7 @@ TextView;obj\Debug\110\res\layout\fragment_cart.xml
 TextView;obj\Debug\110\res\layout\fragment_home.xml
 TextView;obj\Debug\110\res\layout\individualinfo.xml
 TextView;obj\Debug\110\res\layout\individualitem.xml
+TextView;obj\Debug\110\res\layout\individualorder.xml
 TextView;obj\Debug\110\res\layout\loginregister_page.xml
 TextView;obj\Debug\110\res\layout\removefromcart.xml
 TextView;obj\Debug\110\res\layout\settings_page.xml

@@ -168,20 +168,31 @@ namespace market_miniproject.Classes
             return true;
         }
 
-        //public async Task<bool> FetchOrders()
-        //{
-        //    var previousOrders = new List<OrderInfo>();
-        //    try
-        //    {
-        //        var ordersRef = database.Collection("orders").Document(this.firebaseAuthentication.CurrentUser.Uid).Collection("UserOrders");
-        //        var snapshot = await ordersRef.Get().AsAsync<QuerySnapshot>();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
+        public async Task<List<OrderInfo>> FetchOrders()
+        {
+            var previousOrders = new List<OrderInfo>();
+            try
+            {
+                var ordersRef = database.Collection("orders").Document(this.firebaseAuthentication.CurrentUser.Uid).Collection("orders");
+                var snapshot = await ordersRef.Get().AsAsync<QuerySnapshot>();
+                foreach (var document in snapshot.Documents)
+                {
+                    var documentData = document.Data;
+                    // the order retrieving
+                    var orderContent = documentData["orderContent"].ToString(); // all of the order content as a string
+                    var totalPrice = Convert.ToDouble(documentData["totalPrice"].ToString());
+                    var orderId = documentData["orderId"].ToString();
+                    var orderDate = DateTime.Parse(documentData["orderId"].ToString());
+                    previousOrders.Add(new OrderInfo(orderContent, totalPrice, orderId, orderDate));
+                }
+                return previousOrders;
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(Application.Context, $"Error: {ex.Message}", ToastLength.Short).Show();
+                return null;
+            }
+        }
         public async Task<bool> Purchase(List<Track> cartList)
         {
             if (cartList == null || cartList.Count == 0)
@@ -253,7 +264,8 @@ namespace market_miniproject.Classes
             {
                 string title = item.TrackTitle;
                 string author = item.Author;
-                info += $"Title: {title}, author: {author}\n";
+                double price = item.Price;
+                info += $"Title: {title}, Author: {author}, Price: {price}\n";
             }
             return info;
         }
